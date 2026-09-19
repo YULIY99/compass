@@ -1,10 +1,12 @@
 
 const bonusData = [
-  {casino:"BitStarz", geo:"Brazil", type:"Deposit Match", pct:"100%", max:"$500 + 180 FS", wagering:"40x", minDep:"$20"},
   {casino:"BC.Game", geo:"Nigeria", type:"Deposit Match", pct:"180%", max:"$20,000", wagering:"35x", minDep:"$10"},
   {casino:"Cloudbet", geo:"Mexico", type:"Deposit Match", pct:"100%", max:"5 BTC", wagering:"30x", minDep:"$20"},
-  {casino:"BitStarz", geo:"Colombia", type:"No Deposit", pct:"N/A", max:"$10 free", wagering:"45x", minDep:"$0"},
+  {casino:"BitStarz", geo:"Colombia", type:"Deposit Match", pct:"100%", max:"$500 + 180 FS", wagering:"40x", minDep:"$20"},
   {casino:"BC.Game", geo:"Brazil", type:"Deposit Match", pct:"150%", max:"R$1,000", wagering:"35x", minDep:"R$50"},
+  {casino:"Cloudbet", geo:"Brazil", type:"Deposit Match", pct:"100%", max:"5 BTC", wagering:"30x", minDep:"$20"},
+  {casino:"BC.Game", geo:"Kenya", type:"Deposit Match", pct:"180%", max:"$20,000", wagering:"35x", minDep:"$10"},
+  {casino:"Cloudbet", geo:"Kenya", type:"Deposit Match", pct:"100%", max:"5 BTC", wagering:"30x", minDep:"$20"},
 ];
 
 function renderBonusTable(geo){

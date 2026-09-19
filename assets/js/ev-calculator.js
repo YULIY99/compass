@@ -1,8 +1,8 @@
 function calcEV(){
-  const bonus = parseFloat(document.getElementById('ev-bonus').value) || 0;
-  const multiplier = parseFloat(document.getElementById('ev-multiplier').value) || 0;
-  const contribution = parseFloat(document.getElementById('ev-contribution').value) || 100;
-  const rtp = parseFloat(document.getElementById('ev-rtp').value) || 96;
+  const bonus = Math.max(0, parseFloat(document.getElementById('ev-bonus').value) || 0);
+  const multiplier = Math.max(0, parseFloat(document.getElementById('ev-multiplier').value) || 0);
+  const contribution = Math.min(Math.max(parseFloat(document.getElementById('ev-contribution').value) || 100, 1), 100);
+  const rtp = Math.min(100, Math.max(0, parseFloat(document.getElementById('ev-rtp').value) || 96));
 
   const totalWagering = bonus * multiplier;
   const effectiveWagering = totalWagering / (contribution / 100);

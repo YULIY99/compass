@@ -1,9 +1,8 @@
-
 function calcWagering(){
-  const bonus = parseFloat(document.getElementById('bonus-amount').value) || 0;
-  const deposit = parseFloat(document.getElementById('deposit-amount').value) || 0;
-  const multiplier = parseFloat(document.getElementById('multiplier').value) || 0;
-  const weighting = parseFloat(document.getElementById('weighting').value) || 100;
+  const bonus = Math.max(0, parseFloat(document.getElementById('bonus-amount').value) || 0);
+  const deposit = Math.max(0, parseFloat(document.getElementById('deposit-amount').value) || 0);
+  const multiplier = Math.max(0, parseFloat(document.getElementById('multiplier').value) || 0);
+  const weighting = Math.min(Math.max(parseFloat(document.getElementById('weighting').value) || 100, 1), 100);
 
   const base = document.getElementById('basis').value === 'bonus' ? bonus : (bonus + deposit);
   const totalWagering = base * multiplier;
