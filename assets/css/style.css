@@ -344,3 +344,6 @@ footer {
   .rank-card { flex-direction: column; align-items: flex-start; }
   .hero h1 { font-size: 1.8rem; }
 }
+/* Brand logos / placeholders */
+.brand-logo { height: 46px; width: auto; display: block; margin: 2px 0 10px; }
+.rank-logo { height: 30px; width: auto; display: block; margin-bottom: 8px; }
