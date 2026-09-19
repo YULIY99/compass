@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://south-ern-cross.github.io/compass/sitemap.xml
+Sitemap: https://spinorawins.com/sitemap.xml
