@@ -1,8 +1,8 @@
 function calcSpins(){
-  const spins = parseFloat(document.getElementById('fs-count').value) || 0;
-  const valuePerSpin = parseFloat(document.getElementById('fs-value').value) || 0;
-  const wagering = parseFloat(document.getElementById('fs-wagering').value) || 0;
-  const rtp = parseFloat(document.getElementById('fs-rtp').value) || 96;
+  const spins = Math.max(0, parseFloat(document.getElementById('fs-count').value) || 0);
+  const valuePerSpin = Math.max(0, parseFloat(document.getElementById('fs-value').value) || 0);
+  const wagering = Math.max(0, parseFloat(document.getElementById('fs-wagering').value) || 0);
+  const rtp = Math.min(100, Math.max(0, parseFloat(document.getElementById('fs-rtp').value) || 96));
 
   const totalSpinValue = spins * valuePerSpin;
   const expectedWinnings = totalSpinValue * (rtp / 100);
@@ -19,7 +19,9 @@ function calcSpins(){
 
   const note = document.getElementById('fs-note');
   let text;
-  if (wagering === 0) {
+  if (totalSpinValue <= 0) {
+    text = 'Enter the number of spins and value per spin to see the real cash value.';
+  } else if (wagering === 0) {
     text = 'No wagering on winnings — these spins are as good as cash. Rare and genuinely valuable.';
   } else if (realValue >= expectedWinnings * 0.5) {
     text = 'A fair offer: you keep most of the expected winnings after clearing wagering.';
