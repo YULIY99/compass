@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wagering Requirement Calculator | CasinoCompass</title>
+<meta name="description" content="Calculate exactly how much you need to wager to clear a casino bonus, adjusted for game weighting.">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/wagering-calculator.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="disclaimer-banner">18+ | Gambling can be addictive. Play responsibly. This site contains affiliate links and earns commission from featured operators.</div>
+  <div class="container nav">
+    <a href="../index.html" class="logo">Casino<span>Compass</span></a>
+    <ul class="nav-links">
+      <li><a href="../tools/slot-rtp-database.html">RTP Database</a></li>
+      <li><a href="../tools/wagering-requirement-calculator.html">Wagering Calculator</a></li>
+      <li><a href="../tools/bonus-comparator.html">Bonus Comparator</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../methodology.html">Methodology</a></li>
+      <li><a href="../responsible-gambling/index.html">Responsible Gambling</a></li>
+    </ul>
+  </div>
+</header>
+<main>
+
+<div class="container">
+  <div class="breadcrumbs"><a href="../index.html">Home</a> / Tools / Wagering Requirement Calculator</div>
+  <h1>Wagering Requirement Calculator</h1>
+  <p style="color:var(--muted);">Find out exactly how much you need to wager to clear a bonus. New here? <a href="../blog/understanding-wagering-requirements.html">Read the explainer</a>.</p>
+
+  <div class="calc-form">
+    <div><label>Bonus amount</label><input type="number" id="bonus-amount" placeholder="e.g. 100"></div>
+    <div><label>Deposit amount</label><input type="number" id="deposit-amount" placeholder="e.g. 100"></div>
+    <div><label>Wagering multiplier (x)</label><input type="number" id="multiplier" placeholder="e.g. 35"></div>
+    <div><label>Game weighting (%)</label><input type="number" id="weighting" placeholder="e.g. 100" value="100"></div>
+    <div>
+      <label>Calculate wagering on</label>
+      <select id="basis" style="width:100%;background:var(--bg);color:var(--text);border:1px solid #2a2f37;padding:10px;border-radius:6px;">
+        <option value="bonus">Bonus amount only</option>
+        <option value="bonus+deposit">Bonus + deposit</option>
+      </select>
+    </div>
+  </div>
+  <button class="btn" id="calc-btn">Calculate</button>
+
+  <div class="calc-result" id="calc-result" style="display:none;">
+    <p>Total wagering required: <strong>$<span id="result-total"></span></strong></p>
+    <p>Effective wagering (adjusted for game weighting): <strong>$<span id="result-effective"></span></strong></p>
+  </div>
+
+  <section>
+    <h2>What Counts Toward Wagering?</h2>
+    <p>Slots usually count 100% toward wagering; table games and live casino often count less (e.g. 10-20%) or not at all. Always check the operator's specific terms — this calculator uses the weighting you enter as an estimate.</p>
+    <p><a href="../tools/bonus-comparator.html">Compare bonuses with different wagering requirements →</a></p>
+  </section>
+</div>
+
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Guides</h4>
+        <a href="../online-casinos-nigeria.html">Casinos in Nigeria</a>
+        <a href="../online-casinos-brazil.html">Casinos in Brazil</a>
+        <a href="../online-casinos-mexico.html">Casinos in Mexico</a>
+        <a href="../online-casinos-colombia.html">Casinos in Colombia</a>
+      </div>
+      <div>
+        <h4>Payments</h4>
+        <a href="../payment-methods/pix-brazil-casinos.html">PIX (Brazil)</a>
+        <a href="../payment-methods/spei-mexico-casinos.html">SPEI (Mexico)</a>
+        <a href="../payment-methods/pse-colombia-casinos.html">PSE (Colombia)</a>
+        <a href="../payment-methods/crypto-casinos-latam-africa.html">Crypto Payments</a>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <a href="../tools/slot-rtp-database.html">Slot RTP Database</a>
+        <a href="../tools/wagering-requirement-calculator.html">Wagering Calculator</a>
+        <a href="../tools/bonus-comparator.html">Bonus Comparator</a>
+      </div>
+      <div>
+        <h4>Best Casinos</h4>
+        <a href="../best-online-casinos-nigeria.html">Best in Nigeria</a>
+        <a href="../best-online-casinos-brazil.html">Best in Brazil</a>
+        <a href="../best-online-casinos-mexico.html">Best in Mexico</a>
+        <a href="../best-online-casinos-colombia.html">Best in Colombia</a>
+      </div>
+      <div>
+        <h4>Responsible Play</h4>
+        <a href="../responsible-gambling/index.html">Responsible Gambling</a>
+        <a href="../responsible-gambling/self-exclusion-tools.html">Self-Exclusion Tools</a>
+        <a href="../methodology.html">Methodology</a>
+        <a href="../about-us.html">About Us</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CasinoCompass. Independent affiliate publisher. Not a gambling operator. Odds, bonuses and legal status vary by jurisdiction and change frequently — always confirm on the operator's site.</p>
+      <p class="age-gate">Gambling is restricted to legal age (18+/21+ depending on jurisdiction). If you or someone you know has a gambling problem, seek help: BeGambleAware (UK), National Council on Problem Gambling (US/NG resources), CVV (Brazil) 188.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
