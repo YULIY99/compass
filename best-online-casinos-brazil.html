@@ -9,12 +9,25 @@
 <link rel="stylesheet" href="assets/css/style.css">
 
 <style>
-/* Brazil page: casino card bonus structure (page-scoped) */
-.geo-tag{background:#0d3b2e;border:1px solid #1f7a5c;color:#d6f5e3;}
-.bonus-badge{display:inline-block;background:linear-gradient(135deg,#ffd34d,#f5a623);color:#1a1408;font-weight:800;font-size:1.25rem;padding:10px 22px;border-radius:10px;margin:10px 0 4px;box-shadow:0 2px 10px rgba(245,166,35,.35);}
-.btn-claim{display:block;width:100%;max-width:320px;text-align:center;font-size:1.15rem;font-weight:800;padding:16px 20px;margin:14px 0 8px;}
-.review-link{margin:6px 0 2px;}
-.tandc{font-size:.78rem;color:var(--muted,#8a8a8a);margin:2px 0 0;}
+/* Brazil page: casino card (page-scoped redesign) */
+.br-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px;max-width:640px;}
+.br-card-top{display:flex;align-items:center;gap:14px;}
+.br-rank{color:#ffd34d;font-weight:800;font-size:1.35rem;white-space:nowrap;}
+.br-logo{height:32px;width:auto;display:block;}
+.br-name{color:#fff;font-weight:800;font-size:20px;margin:0;white-space:nowrap;}
+.br-geo-pill{margin-left:auto;font-size:.75rem;color:#ffd34d;border:1px solid rgba(255,211,77,.45);border-radius:999px;padding:4px 12px;white-space:nowrap;}
+.br-bonus{color:#ffd34d;font-weight:800;font-size:30px;line-height:1.2;margin:18px 0 4px;}
+.br-desc{font-size:.9rem;color:var(--muted,#8a8a8a);margin:0 0 16px;}
+.br-btn{display:block;width:100%;min-height:52px;line-height:52px;border-radius:12px;background:#ffd34d;color:#1a1408;font-size:16px;font-weight:800;text-align:center;text-decoration:none;margin:4px 0 10px;box-sizing:border-box;}
+.br-btn:hover{background:#ffc933;}
+.br-under{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;}
+.br-under a{color:#ffd34d;text-decoration:none;}
+.br-under .tandc{color:var(--muted,#8a8a8a);}
+@media (max-width:520px){
+  .br-card-top{flex-direction:column;align-items:flex-start;}
+  .br-geo-pill{margin-left:0;}
+  .br-under{flex-direction:column;align-items:flex-start;gap:6px;}
+}
 </style>
 
 <script type="application/ld+json">
@@ -80,19 +93,21 @@
 
   <section style="border:none;padding-top:10px;">
     <h2>Top Picks for Brazil</h2>
-    <div class="rank-card">
-          <div class="rank-number">#1</div>
-          <div class="rank-info">
-            <img class="rank-logo" src="assets/images/cloudbet-logo.svg" alt="Cloudbet logo" loading="lazy">
-            <h3>Cloudbet</h3>
-            <span class="tag geo-tag">Best for Brazil</span>
-            <div class="bonus-badge">100% up to 5 BTC</div>
-            <p>Crypto-first casino and sportsbook with high betting limits and one wallet for both. Brazil is not on Cloudbet's official restricted-jurisdictions list. Not SPA-licensed — Brazil may block the domain or PIX rails at any time, so verify access before depositing.</p>
-            <a class="btn btn-claim" href="https://cldbt.cloud/go/en/landing/bitcoin-bonus?af_token=99f4e7ff12c659399db54721b57773fc" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-            <p class="review-link"><a href="cloudbet-review.html">Read review →</a></p>
-            <p class="tandc">T&C apply, 18+</p>
-          </div>
-        </div>
+    <div class="br-card">
+      <div class="br-card-top">
+        <span class="br-rank">#1</span>
+        <img class="br-logo" src="assets/images/cloudbet-logo.svg" alt="Cloudbet logo" loading="lazy">
+        <h3 class="br-name">Cloudbet</h3>
+        <span class="br-geo-pill">Best for Brazil</span>
+      </div>
+      <div class="br-bonus">100% up to 5 BTC</div>
+      <p class="br-desc">Crypto-first casino and sportsbook with high betting limits and one wallet for both. Brazil is not on Cloudbet's official restricted-jurisdictions list. Not SPA-licensed — Brazil may block the domain or PIX rails at any time, so verify access before depositing.</p>
+      <a class="br-btn" href="https://cldbt.cloud/go/en/landing/bitcoin-bonus?af_token=99f4e7ff12c659399db54721b57773fc" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
+      <div class="br-under">
+        <a href="cloudbet-review.html">Read review →</a>
+        <span class="tandc">T&amp;C apply, 18+</span>
+      </div>
+    </div>
   </section>
 
   <section>
