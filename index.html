@@ -8,61 +8,56 @@
 <link rel="canonical" href="https://spinorawins.com/">
 <link rel="stylesheet" href="assets/css/style.css">
 <style>
-/* Bonus banner (page-local, matches site gold theme) */
-.bonus-banner{
-  background:linear-gradient(135deg,#f7c948,#e8960f);
-  color:#1a1408;font-weight:700;font-size:.92rem;
-  padding:10px 14px;border-radius:10px;margin:10px 0;
-  box-shadow:0 2px 10px rgba(232,150,15,.35);
-}
-/* --- Homepage top-3 redesign (page-local, do not move to style.css) --- */
+/* --- Homepage two-column layout: content left, compact sticky toplist right --- */
 .age-badge{
   display:inline-block;border:2px solid var(--gold-light,#f7c948);color:var(--gold-light,#f7c948);
   font-weight:800;font-size:.8rem;line-height:1;padding:5px 9px;border-radius:50%;
   vertical-align:middle;margin-left:10px;white-space:nowrap;
 }
-.top-casinos{margin-top:26px;}
-.top-list{list-style:none;margin:18px 0 0;padding:0;counter-reset:toprank;display:flex;flex-direction:column;gap:20px;}
-.top-item{
-  position:relative;display:flex;flex-direction:column;align-items:flex-start;
-  background:#151b2e;border:1px solid #2a3350;border-radius:16px;padding:28px 28px 22px;
+.homepage-layout{display:flex;gap:32px;align-items:flex-start;margin-top:26px;}
+.home-main{flex:1 1 0;min-width:0;}
+.home-intro{margin:0 0 18px;}
+.home-intro p{font-size:1.02rem;margin:0 0 10px;}
+.home-sidebar{
+  width:320px;flex:0 0 320px;position:sticky;top:20px;z-index:10;
+  background:#151b2e;border:1px solid #2a3350;border-radius:16px;padding:20px;
   box-shadow:0 4px 24px rgba(0,0,0,.35);
 }
-.top-item.top-pick{
-  border:2px solid var(--gold-light,#f7c948);
-  box-shadow:0 0 0 1px var(--gold-light,#f7c948),0 6px 32px rgba(247,201,72,.25);
+.home-sidebar h2{margin:0 0 14px;font-size:1.15rem;color:var(--gold-light,#f7c948);}
+.sidebar-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px;}
+.sb-item{position:relative;background:#101627;border:1px solid #2a3350;border-radius:12px;padding:14px;}
+.sb-item.sb-pick{border-color:var(--gold-light,#f7c948);}
+.sb-badge{
+  position:absolute;top:-10px;left:12px;background:linear-gradient(135deg,#f7c948,#e8960f);
+  color:#1a1408;font-weight:800;font-size:.66rem;letter-spacing:.04em;text-transform:uppercase;
+  padding:4px 10px;border-radius:999px;white-space:nowrap;
 }
-.top-pick-badge{
-  position:absolute;top:-14px;left:24px;background:linear-gradient(135deg,#f7c948,#e8960f);
-  color:#1a1408;font-weight:800;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;
-  padding:6px 14px;border-radius:999px;box-shadow:0 2px 10px rgba(232,150,15,.4);
+.sb-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.sb-rank{font-weight:900;color:var(--gold-light,#f7c948);font-size:1rem;flex:0 0 auto;}
+.sb-row img{width:40px;height:40px;object-fit:contain;border-radius:8px;background:#0e1322;flex:0 0 auto;}
+.sb-text{min-width:0;}
+.sb-text strong{display:block;font-size:.95rem;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sb-bonus{display:block;font-size:.8rem;color:var(--gold-light,#f7c948);font-weight:700;margin-top:2px;}
+.sb-claim{
+  display:block;width:100%;text-align:center;font-size:.95rem;font-weight:800;
+  padding:12px 16px;border-radius:10px;margin:2px 0 8px;
 }
-.rank-badge{
-  font-size:2.6rem;font-weight:900;line-height:1;color:var(--gold-light,#f7c948);
-  letter-spacing:-.02em;margin-bottom:12px;
-}
-.top-name{display:flex;align-items:center;gap:14px;margin-bottom:10px;}
-.top-name img{width:64px;height:64px;object-fit:contain;border-radius:12px;background:#0e1322;}
-.top-name h3{margin:0;font-size:1.6rem;}
-.geo-tag{
-  display:inline-block;font-size:.8rem;font-weight:700;color:#0e1322;
-  background:var(--gold-light,#f7c948);padding:4px 12px;border-radius:999px;margin-bottom:12px;
-}
-.bonus-hook{font-size:1.25rem;margin:4px 0 16px;}
-.claim-btn{
-  display:block;width:100%;text-align:center;font-size:1.15rem;font-weight:800;
-  padding:16px 24px !important;border-radius:12px !important;margin:4px 0 12px;
-}
-.review-link{font-weight:700;font-size:.95rem;margin-bottom:10px;}
-.tc-note{font-size:.8rem;color:#8b93ad;margin:0;}
+.sb-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.75rem;}
+.sb-foot a{font-weight:700;}
+.sb-foot span{color:#8b93ad;white-space:nowrap;}
 .trust-strip{
-  margin:26px 0 0;padding:20px 24px;border:1px solid #2a3350;border-radius:14px;background:#101627;
+  margin:0 0 18px;padding:20px 24px;border:1px solid #2a3350;border-radius:14px;background:#101627;
 }
 .trust-strip h3{margin:0 0 12px;font-size:1.05rem;color:var(--gold-light,#f7c948);}
 .trust-strip ul{list-style:none;margin:0 0 10px;padding:0;display:flex;flex-wrap:wrap;gap:10px 24px;}
 .trust-strip ul li{font-size:.92rem;padding-left:22px;position:relative;}
 .trust-strip ul li::before{content:"✓";position:absolute;left:0;color:var(--gold-light,#f7c948);font-weight:800;}
 .trust-strip .updated{font-size:.82rem;color:#8b93ad;margin:0;}
+.affiliate-note{font-size:0.85em;color:#666;margin:0 0 18px;}
+@media (max-width:900px){
+  .homepage-layout{flex-direction:column;}
+  .home-sidebar{width:100%;flex:none;position:static;}
+}
 </style>
 
 <script type="application/ld+json">
@@ -87,6 +82,36 @@
           "position": 1,
           "name": "Home",
           "item": "https://spinorawins.com/"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Top Casinos",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Cloudbet",
+          "item": "https://spinorawins.com/cloudbet-review.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "BitStarz",
+          "item": "https://spinorawins.com/bitstarz-review.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cashy",
+          "item": "https://spinorawins.com/cashy-review.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Rollbit",
+          "item": "https://spinorawins.com/rollbit-review.html"
         }
       ]
     }
@@ -117,59 +142,12 @@
     <div class="hero-actions"><a href="tools/bonus-comparator.html" class="btn">Compare Bonuses →</a> <a href="tools/slot-rtp-database.html" class="btn" style="background:transparent;border:1px solid var(--blue-light);color:var(--blue-light) !important;box-shadow:none;">Slot RTP Database</a></div>
   </div>
 </div>
-<div class="container">
-  <section class="top-casinos">
-    <h2>Top-Rated Operators</h2>
-    <ol class="top-list">
-      <li class="top-item top-pick">
-        <span class="top-pick-badge">Our Top Pick</span>
-        <span class="rank-badge">#1</span>
-        <div class="top-name">
-          <img src="assets/images/cloudbet-logo.svg" alt="Cloudbet logo" loading="lazy">
-          <h3>Cloudbet</h3>
-        </div>
-        <span class="geo-tag">Best for Nigeria</span>
-        <p class="bonus-hook">🎁 <strong>100% up to 5 BTC</strong></p>
-        <a class="btn claim-btn" href="https://cldbt.cloud/go/en/landing/bitcoin-bonus?af_token=99f4e7ff12c659399db54721b57773fc" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-        <a class="review-link" href="cloudbet-review.html">Read review →</a>
-        <p class="tc-note">T&amp;C apply, 18+. Gamble responsibly.</p>
-      </li>
-      <li class="top-item">
-        <span class="rank-badge">#2</span>
-        <div class="top-name">
-          <img src="assets/images/placeholder-bitstarz.svg" alt="BitStarz" loading="lazy">
-          <h3>BitStarz</h3>
-        </div>
-        <span class="geo-tag">Best for Nigeria</span>
-        <p class="bonus-hook">🎁 <strong>up to 5 BTC + 180 Free Spins</strong></p>
-        <a class="btn claim-btn" href="https://bzstarz2.com/bswxoxzh5" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-        <a class="review-link" href="bitstarz-review.html">Read review →</a>
-        <p class="tc-note">T&amp;C apply, 18+. Gamble responsibly.</p>
-      </li>
-      <li class="top-item">
-        <span class="rank-badge">#3</span>
-        <div class="top-name">
-          <img src="assets/images/placeholder-cashy.svg" alt="Cashy" loading="lazy">
-          <h3>Cashy</h3>
-        </div>
-        <span class="geo-tag">Best for Nigeria</span>
-        <p class="bonus-hook">🎁 Welcome Bonus — <small>check the current offer on the casino site</small></p>
-        <a class="btn claim-btn" href="https://gocashy.com/bjjzhlaar" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-        <a class="review-link" href="cashy-review.html">Read review →</a>
-        <p class="tc-note">T&amp;C apply, 18+. Gamble responsibly.</p>
-      <li class="top-item">
-        <span class="rank-badge">#4</span>
-        <div class="top-name">
-          <img src="assets/images/placeholder-rollbit.svg" alt="Rollbit" loading="lazy">
-          <h3>Rollbit</h3>
-        </div>
-        <span class="geo-tag">Best for Nigeria</span>
-        <p class="bonus-hook">🎁 Welcome Bonus — <small>check the current offer on the casino site</small></p>
-        <a class="btn claim-btn" href="https://rollbit.com/referral/SPINORAWINS01" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-        <a class="review-link" href="rollbit-review.html">Read review →</a>
-        <p class="tc-note">T&amp;C apply, 18+. Gamble responsibly.</p>
-      </li>
-    </ol>
+<div class="container homepage-layout">
+  <div class="home-main">
+    <section class="home-intro">
+      <p>Spinora Wins publishes independent guides to online casinos for Nigeria, Brazil, Mexico, Colombia and Kenya — licensing, payment methods and honest operator reviews.</p>
+      <p>We test casinos with real money before recommending them. Our current top picks are in the toplist on the right.</p>
+    </section>
     <div class="trust-strip">
       <h3>How we rank</h3>
       <ul>
@@ -180,42 +158,109 @@
       </ul>
       <p class="updated">Last updated: September 2026</p>
     </div>
-    <p class="affiliate-note" style="font-size:0.85em;color:#666;margin-top:8px;">Affiliate links: we may earn a commission if you sign up through them, at no extra cost to you. This does not influence our rankings.</p>
-  </section>
+    <p class="affiliate-note">Affiliate links: we may earn a commission if you sign up through them, at no extra cost to you. This does not influence our rankings.</p>
 
-  <section style="border:none;padding-top:10px;">
-    <h2>Country Guides</h2>
-    <div class="cards-grid">
-      <div class="card"><h3>🇳🇬 Nigeria</h3><p>Legality, state-level licensing, crypto payments.</p><a href="online-casinos-nigeria.html">Read guide →</a></div>
-      <div class="card"><h3>🇧🇷 Brazil</h3><p>SPA licensing, PIX, legislative changes.</p><a href="online-casinos-brazil.html">Read guide →</a></div>
-      <div class="card"><h3>🇲🇽 Mexico</h3><p>SEGOB rules, SPEI, offshore operators.</p><a href="online-casinos-mexico.html">Read guide →</a></div>
-      <div class="card"><h3>🇨🇴 Colombia</h3><p>Coljuegos licensing, PSE, Nequi.</p><a href="online-casinos-colombia.html">Read guide →</a></div>
-      <div class="card"><h3>🇰🇪 Kenya</h3><p>Gambling Control Act 2025, GRA licensing, M-Pesa.</p><a href="online-casinos-kenya.html">Read guide →</a></div>
-      <div class="card"><h3>🇿🇦 South Africa</h3><p>NGA interactive-games ban, 2026 enforcement, legal options.</p><a href="online-casinos-south-africa.html">Read guide →</a></div>
-      <div class="card"><h3>🇮🇳 India</h3><p>Online money games banned since May 2026 — legal explainer, no rankings.</p><a href="online-casinos-india.html">Read guide →</a></div>
-    </div>
-  </section>
+    <section style="border:none;padding-top:10px;">
+      <h2>Country Guides</h2>
+      <div class="cards-grid">
+        <div class="card"><h3>🇳🇬 Nigeria</h3><p>Legality, state-level licensing, crypto payments.</p><a href="online-casinos-nigeria.html">Read guide →</a></div>
+        <div class="card"><h3>🇧🇷 Brazil</h3><p>SPA licensing, PIX, legislative changes.</p><a href="online-casinos-brazil.html">Read guide →</a></div>
+        <div class="card"><h3>🇲🇽 Mexico</h3><p>SEGOB rules, SPEI, offshore operators.</p><a href="online-casinos-mexico.html">Read guide →</a></div>
+        <div class="card"><h3>🇨🇴 Colombia</h3><p>Coljuegos licensing, PSE, Nequi.</p><a href="online-casinos-colombia.html">Read guide →</a></div>
+        <div class="card"><h3>🇰🇪 Kenya</h3><p>Gambling Control Act 2025, GRA licensing, M-Pesa.</p><a href="online-casinos-kenya.html">Read guide →</a></div>
+        <div class="card"><h3>🇿🇦 South Africa</h3><p>NGA interactive-games ban, 2026 enforcement, legal options.</p><a href="online-casinos-south-africa.html">Read guide →</a></div>
+        <div class="card"><h3>🇮🇳 India</h3><p>Online money games banned since May 2026 — legal explainer, no rankings.</p><a href="online-casinos-india.html">Read guide →</a></div>
+      </div>
+    </section>
 
-  <section>
-    <h2>Tools</h2>
-    <div class="cards-grid">
-      <div class="card"><h3>Slot RTP Database</h3><p>Filter slots by RTP and volatility.</p><a href="tools/slot-rtp-database.html">Open tool →</a></div>
-      <div class="card"><h3>Wagering Calculator</h3><p>Know exactly what a bonus costs to clear.</p><a href="tools/wagering-requirement-calculator.html">Open tool →</a></div>
-      <div class="card"><h3>Bonus Comparator</h3><p>Compare welcome offers by country.</p><a href="tools/bonus-comparator.html">Open tool →</a></div>
-      <div class="card"><h3>Bonus EV Calculator</h3><p>Compute the expected value of any casino bonus.</p><a href="tools/bonus-expected-value-calculator.html">Open tool →</a></div>
-      <div class="card"><h3>Free Spins Value Calculator</h3><p>Find out what free spins are really worth.</p><a href="tools/free-spins-value-calculator.html">Open tool →</a></div>
-    </div>
-  </section>
+    <section>
+      <h2>Tools</h2>
+      <div class="cards-grid">
+        <div class="card"><h3>Slot RTP Database</h3><p>Filter slots by RTP and volatility.</p><a href="tools/slot-rtp-database.html">Open tool →</a></div>
+        <div class="card"><h3>Wagering Calculator</h3><p>Know exactly what a bonus costs to clear.</p><a href="tools/wagering-requirement-calculator.html">Open tool →</a></div>
+        <div class="card"><h3>Bonus Comparator</h3><p>Compare welcome offers by country.</p><a href="tools/bonus-comparator.html">Open tool →</a></div>
+        <div class="card"><h3>Bonus EV Calculator</h3><p>Compute the expected value of any casino bonus.</p><a href="tools/bonus-expected-value-calculator.html">Open tool →</a></div>
+        <div class="card"><h3>Free Spins Value Calculator</h3><p>Find out what free spins are really worth.</p><a href="tools/free-spins-value-calculator.html">Free Spins Value Calculator</a></div>
+      </div>
+    </section>
 
-  <section>
-    <h2>Slot Reviews</h2>
-    <div class="cards-grid">
-      <div class="card"><h3>Gates of Olympus</h3><p>Pragmatic Play's 5,000x high-volatility hit — RTP 96.50%.</p><a href="slots/pragmatic-play/gates-of-olympus-review.html">Read review →</a></div>
-      <div class="card"><h3>Aviator</h3><p>Spribe's crash game — RTP 97%, provably fair.</p><a href="slots/spribe/aviator-review.html">Read review →</a></div>
-    </div>
-  </section>
+    <section>
+      <h2>Slot Reviews</h2>
+      <div class="cards-grid">
+        <div class="card"><h3>Gates of Olympus</h3><p>Pragmatic Play's 5,000x high-volatility hit — RTP 96.50%.</p><a href="slots/pragmatic-play/gates-of-olympus-review.html">Read review →</a></div>
+        <div class="card"><h3>Aviator</h3><p>Spribe's crash game — RTP 97%, provably fair.</p><a href="slots/spribe/aviator-review.html">Read review →</a></div>
+      </div>
+    </section>
 
-  <div class="status-box">This site contains affiliate links. We may earn commission (RevShare) if you sign up through our links, at no extra cost to you. 18+. Gamble responsibly. <a href="responsible-gambling/index.html">Learn more</a>. Curious how we pick our recommendations? See our <a href="methodology.html">Methodology</a>.</div>
+    <div class="status-box">This site contains affiliate links. We may earn commission (RevShare) if you sign up through our links, at no extra cost to you. 18+. Gamble responsibly. <a href="responsible-gambling/index.html">Learn more</a>. Curious how we pick our recommendations? See our <a href="methodology.html">Methodology</a>.</div>
+  </div>
+
+  <aside class="home-sidebar">
+    <h2>Top Casinos</h2>
+    <ol class="sidebar-list">
+      <li class="sb-item sb-pick">
+        <span class="sb-badge">Our Top Pick</span>
+        <div class="sb-row">
+          <span class="sb-rank">#1</span>
+          <img src="assets/images/cloudbet-logo.svg" alt="Cloudbet logo" loading="lazy">
+          <div class="sb-text">
+            <strong>Cloudbet</strong>
+            <span class="sb-bonus">100% up to 5 BTC</span>
+          </div>
+        </div>
+        <a class="btn sb-claim" href="https://cldbt.cloud/go/en/landing/bitcoin-bonus?af_token=99f4e7ff12c659399db54721b57773fc" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
+        <div class="sb-foot">
+          <a href="cloudbet-review.html">Read review →</a>
+          <span>18+ T&amp;C apply</span>
+        </div>
+      </li>
+      <li class="sb-item">
+        <div class="sb-row">
+          <span class="sb-rank">#2</span>
+          <img src="assets/images/placeholder-bitstarz.svg" alt="BitStarz" loading="lazy">
+          <div class="sb-text">
+            <strong>BitStarz</strong>
+            <span class="sb-bonus">up to 5 BTC + 180 Free Spins</span>
+          </div>
+        </div>
+        <a class="btn sb-claim" href="https://bzstarz2.com/bswxoxzh5" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
+        <div class="sb-foot">
+          <a href="bitstarz-review.html">Read review →</a>
+          <span>18+ T&amp;C apply</span>
+        </div>
+      </li>
+      <li class="sb-item">
+        <div class="sb-row">
+          <span class="sb-rank">#3</span>
+          <img src="assets/images/placeholder-cashy.svg" alt="Cashy" loading="lazy">
+          <div class="sb-text">
+            <strong>Cashy</strong>
+            <span class="sb-bonus">Welcome Bonus — check the current offer on the casino site</span>
+          </div>
+        </div>
+        <a class="btn sb-claim" href="https://gocashy.com/bjjzhlaar" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
+        <div class="sb-foot">
+          <a href="cashy-review.html">Read review →</a>
+          <span>18+ T&amp;C apply</span>
+        </div>
+      </li>
+      <li class="sb-item">
+        <div class="sb-row">
+          <span class="sb-rank">#4</span>
+          <img src="assets/images/placeholder-rollbit.svg" alt="Rollbit" loading="lazy">
+          <div class="sb-text">
+            <strong>Rollbit</strong>
+            <span class="sb-bonus">Welcome Bonus — check the current offer on the casino site</span>
+          </div>
+        </div>
+        <a class="btn sb-claim" href="https://rollbit.com/referral/SPINORAWINS01" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
+        <div class="sb-foot">
+          <a href="rollbit-review.html">Read review →</a>
+          <span>18+ T&amp;C apply</span>
+        </div>
+      </li>
+    </ol>
+  </aside>
 </div>
 
 </main>
