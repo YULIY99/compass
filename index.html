@@ -25,34 +25,21 @@
   box-shadow:0 4px 24px rgba(0,0,0,.35);
 }
 .home-sidebar h2{margin:0 0 14px;font-size:1.15rem;color:var(--gold-light,#f7c948);}
-/* --- Sidebar toplist: premium compact rows (askgamblers-style) --- */
-.sidebar-list{list-style:none;margin:0;padding:0;}
-.sb-item{position:relative;padding:18px 2px;border-bottom:1px solid #232b47;}
-.sb-item:last-child{border-bottom:none;padding-bottom:2px;}
-.sb-item:first-child{padding-top:2px;}
-.sb-badge{
-  display:inline-block;background:rgba(247,201,72,.10);color:var(--gold-light,#f7c948);
-  font-weight:700;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
-  padding:4px 10px;border:1px solid rgba(247,201,72,.4);border-radius:999px;margin-bottom:10px;
+/* --- Sidebar: official banner stack + subdued mini rows --- */
+.sb-banners{display:flex;flex-direction:column;gap:18px;align-items:center;}
+.sb-banners .banner-slot{max-width:300px;width:100%;}
+.sb-mini{
+  display:flex;align-items:center;gap:10px;width:100%;max-width:300px;
+  padding:10px 12px;border:1px solid #232b47;border-radius:10px;background:#101627;
 }
-.sb-row{display:flex;align-items:center;gap:12px;}
-.sb-rank{font-size:.78rem;color:#7d86a3;font-weight:700;flex:0 0 auto;min-width:20px;}
-.sb-row img{
-  width:60px;height:60px;object-fit:contain;border-radius:12px;background:#ffffff;
-  padding:7px;flex:0 0 auto;box-shadow:0 2px 8px rgba(0,0,0,.25);
-}
-.sb-text{min-width:0;flex:1 1 auto;}
-.sb-text strong{display:block;font-size:1.02rem;font-weight:700;color:#fff;letter-spacing:.01em;}
-.sb-bonus{display:block;font-size:.8rem;color:#a9b2cc;font-weight:400;margin-top:4px;line-height:1.45;}
-.sb-claim{
-  display:inline-block;width:auto;font-size:.85rem;font-weight:700;text-align:center;
-  padding:10px 28px;border-radius:999px;margin:12px 0 10px;
-}
-.sb-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.74rem;}
-.sb-foot a{font-weight:600;}
-.sb-foot span{color:#6f7794;white-space:nowrap;}
+.sb-mini img{width:44px;height:44px;object-fit:contain;border-radius:8px;background:#ffffff;padding:5px;flex:0 0 auto;}
+.sb-mini-text{flex:1 1 auto;min-width:0;}
+.sb-mini-text strong{display:block;font-size:.82rem;color:#fff;font-weight:700;}
+.sb-mini-text span{display:block;font-size:.68rem;color:#8b93ad;line-height:1.35;margin-top:2px;}
+.sb-mini a{font-size:.74rem;font-weight:700;color:var(--gold-light,#f7c948);white-space:nowrap;text-decoration:none;}
+.sb-mini a:hover{text-decoration:underline;}
 @media (max-width:900px){
-  .sb-claim{padding:10px 32px;}
+  .sb-banners{align-items:center;}
 }
 .trust-strip{
   margin:0 0 18px;padding:20px 24px;border:1px solid #2a3350;border-radius:14px;background:#101627;
@@ -211,74 +198,34 @@
 
   <aside class="home-sidebar">
     <h2>Top Casinos</h2>
-    <ol class="sidebar-list">
-      <li class="sb-item sb-pick">
-        <span class="sb-badge">Our Top Pick</span>
-        <div class="sb-row">
-          <span class="sb-rank">#1</span>
-          <img src="assets/images/cloudbet-logo.svg" alt="Cloudbet logo" loading="lazy">
-          <div class="sb-text">
-            <strong>Cloudbet</strong>
-            <span class="sb-bonus">100% up to 5 BTC</span>
-          </div>
-        </div>
-        <a class="btn sb-claim" href="https://cldbt.cloud/go/en/landing/bitcoin-bonus?af_token=99f4e7ff12c659399db54721b57773fc" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-        <div class="sb-foot">
-          <a href="cloudbet-review.html">Read review →</a>
-          <span>18+ T&amp;C apply</span>
-        </div>
-      </li>
-      <li class="sb-item">
-        <div class="sb-row">
-          <span class="sb-rank">#2</span>
-          <img src="assets/images/placeholder-bitstarz.svg" alt="BitStarz" loading="lazy">
-          <div class="sb-text">
-            <strong>BitStarz</strong>
-            <span class="sb-bonus">up to 5 BTC + 180 Free Spins</span>
-          </div>
-        </div>
-        <a class="btn sb-claim" href="https://bzstarz2.com/bswxoxzh5" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-        <div class="sb-foot">
-          <a href="bitstarz-review.html">Read review →</a>
-          <span>18+ T&amp;C apply</span>
-        </div>
-      </li>
-      <li class="sb-item">
-        <div class="sb-row">
-          <span class="sb-rank">#3</span>
-          <img src="assets/images/placeholder-cashy.svg" alt="Cashy" loading="lazy">
-          <div class="sb-text">
-            <strong>Cashy</strong>
-            <span class="sb-bonus">Welcome Bonus — check the current offer on the casino site</span>
-          </div>
-        </div>
-        <a class="btn sb-claim" href="https://gocashy.com/bjjzhlaar" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-        <div class="sb-foot">
-          <a href="cashy-review.html">Read review →</a>
-          <span>18+ T&amp;C apply</span>
-        </div>
-      </li>
-      <li class="sb-item">
-        <div class="sb-row">
-          <span class="sb-rank">#4</span>
-          <img src="assets/banners/rollbit-logo.png" alt="Rollbit" loading="lazy">
-          <div class="sb-text">
-            <strong>Rollbit</strong>
-            <span class="sb-bonus">Welcome Bonus — check the current offer on the casino site</span>
-          </div>
-        </div>
-        <a class="btn sb-claim" href="https://rollbit.com/referral/SPINORAWINS01" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-        <div class="sb-foot">
-          <a href="rollbit-review.html">Read review →</a>
-          <span>18+ T&amp;C apply</span>
-        </div>
-      </li>
-    </ol>
-<!-- BANNER SLOT: official cloudbet 300x250 — pending, do not fill manually -->
+    <div class="sb-banners">
+<!-- BANNER SLOT: official cloudbet 300x250 — live -->
 <div class="banner-slot banner-300x250" data-brand="cloudbet" data-size="300x250" data-status="live">
   <a class="banner-link" href="https://cldbt.cloud/go/en/landing/bitcoin-bonus?af_token=99f4e7ff12c659399db54721b57773fc" target="_blank" rel="nofollow sponsored noopener"><img src="assets/images/banners/cloudbet-300x250.png" width="300" height="250" alt="Cloudbet official banner" loading="lazy"></a>
   <span class="banner-ad-label">AD</span>
 </div>
+<!-- BANNER SLOT: official bitstarz 300x250 — live -->
+<div class="banner-slot banner-300x250" data-brand="bitstarz" data-size="300x250" data-status="live">
+  <a class="banner-link" href="https://bzstarz2.com/bswxoxzh5" target="_blank" rel="nofollow sponsored noopener"><img src="assets/banners/bitstarz-300x250-1.jpg" width="300" height="250" alt="BitStarz official banner" loading="lazy"></a>
+  <span class="banner-ad-label">AD</span>
+</div>
+<div class="sb-mini">
+  <img src="assets/images/placeholder-cashy.svg" alt="Cashy logo" loading="lazy">
+  <div class="sb-mini-text">
+    <strong>Cashy</strong>
+    <span>Welcome Bonus — check the current offer on the casino site</span>
+  </div>
+  <a href="https://gocashy.com/bjjzhlaar" target="_blank" rel="nofollow sponsored noopener">Visit →</a>
+</div>
+<div class="sb-mini">
+  <img src="assets/banners/rollbit-logo.png" alt="Rollbit logo" loading="lazy">
+  <div class="sb-mini-text">
+    <strong>Rollbit</strong>
+    <span>Welcome Bonus — check the current offer on the casino site</span>
+  </div>
+  <a href="https://rollbit.com/referral/SPINORAWINS01" target="_blank" rel="nofollow sponsored noopener">Visit →</a>
+</div>
+    </div>
   </aside>
 </div>
 
