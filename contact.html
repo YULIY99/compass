@@ -55,15 +55,20 @@
   <p style="color:var(--muted);max-width:650px;">Have an editorial question, partnership inquiry, or correction? Send us a message using the form below, and our team will review your inquiry.</p>
   <p>Email us directly at <a href="mailto:contact@spinorawins.com">contact@spinorawins.com</a>.</p>
 
+    <!-- FORMSPREE SETUP (one-time, manual):
+       1. Create a free form at https://formspree.io/ — set the notification email to contact@spinorawins.com.
+       2. Copy your form endpoint ID and replace FORMSPREE_ENDPOINT in the action below,
+          e.g. action="https://formspree.io/f/xabc1234".
+       Until the real endpoint is set, the form shows a notice instead of sending. -->
   <div style="max-width:560px;margin-top:24px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:24px;">
-    <form class="calc-form" onsubmit="event.preventDefault(); document.getElementById('form-feedback').style.display='block'; this.reset();">
+    <form id="contact-form" class="calc-form" action="https://formspree.io/f/FORMSPREE_ENDPOINT" method="POST">
       <div style="margin-bottom:14px;">
         <label for="contact-name" style="display:block;margin-bottom:6px;font-weight:600;font-size:0.9rem;">Your Name</label>
         <input type="text" id="contact-name" name="name" required placeholder="Your name" style="width:100%;box-sizing:border-box;">
       </div>
       <div style="margin-bottom:14px;">
         <label for="contact-email" style="display:block;margin-bottom:6px;font-weight:600;font-size:0.9rem;">Your Email</label>
-        <input type="text" id="contact-email" name="email" required placeholder="your.email@example.com" style="width:100%;box-sizing:border-box;">
+        <input type="email" id="contact-email" name="email" required placeholder="your.email@example.com" style="width:100%;box-sizing:border-box;">
       </div>
       <div style="margin-bottom:14px;">
         <label for="contact-subject" style="display:block;margin-bottom:6px;font-weight:600;font-size:0.9rem;">Subject</label>
@@ -78,12 +83,41 @@
         <label for="contact-message" style="display:block;margin-bottom:6px;font-weight:600;font-size:0.9rem;">Message</label>
         <textarea id="contact-message" name="message" rows="5" required placeholder="Type your message here..." style="width:100%;box-sizing:border-box;background:var(--bg-alt);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:10px;font-family:inherit;font-size:0.9rem;resize:vertical;"></textarea>
       </div>
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <button type="submit" class="btn" style="width:100%;text-align:center;border:none;cursor:pointer;font-weight:700;">Send Message</button>
-      <div id="form-feedback" style="display:none;margin-top:14px;padding:12px;background:rgba(74,222,128,0.15);border:1px solid #4ade80;border-radius:6px;color:#4ade80;font-size:0.9rem;text-align:center;">
-        Thank you for reaching out! Your message has been submitted.
-      </div>
+      <p id="form-status" role="status" style="display:none;margin-top:14px;padding:12px;border-radius:6px;font-size:0.9rem;text-align:center;"></p>
     </form>
+    <noscript><p style="margin-top:12px;">Prefer email: <a href="mailto:contact@spinorawins.com">contact@spinorawins.com</a></p></noscript>
   </div>
+  <script>
+  (function () {
+    var form = document.getElementById('contact-form');
+    var status = document.getElementById('form-status');
+    function show(msg, ok) {
+      status.style.display = 'block';
+      status.textContent = msg;
+      status.style.background = ok ? 'rgba(74,222,128,0.15)' : 'rgba(248,113,113,0.15)';
+      status.style.border = '1px solid ' + (ok ? '#4ade80' : '#f87171');
+      status.style.color = ok ? '#4ade80' : '#f87171';
+    }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (form.action.indexOf('FORMSPREE_ENDPOINT') !== -1) {
+        show('The contact form is not configured yet \u2014 please email us directly at contact@spinorawins.com.', false);
+        return;
+      }
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+        .then(function (r) {
+          if (r.ok) { show('Thank you \u2014 your message has been sent. We will review it shortly.', true); form.reset(); }
+          else { show('Something went wrong sending your message. Please email us directly at contact@spinorawins.com.', false); }
+        })
+        .catch(function () { show('Something went wrong sending your message. Please email us directly at contact@spinorawins.com.', false); })
+        .finally(function () { btn.disabled = false; });
+    });
+  })();
+  </script>
 </div>
 
 </main>
