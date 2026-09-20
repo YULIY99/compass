@@ -8,30 +8,25 @@
 <link rel="canonical" href="https://spinorawins.com/best-online-casinos-kenya.html">
 <link rel="stylesheet" href="assets/css/style.css">
 <style>
-/* Kenya top-card redesign — page-scoped, do not move to assets/css/style.css */
-.kenya-card { flex-wrap: wrap; row-gap: 10px; }
-.kenya-card .geo-tag {
-  display: inline-block;
-  background: rgba(27, 138, 90, 0.16);
-  color: var(--emerald-light);
-  border: 1px solid rgba(46, 204, 113, 0.45);
-  font-size: 0.75rem; font-weight: 700;
-  padding: 3px 12px; border-radius: 20px;
+/* Top-card redesign v2 (page-scoped, do not move to assets/css/style.css) */
+.sw-card { background: #151a28; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 24px; margin: 0 0 16px; }
+.sw-top-row { display: flex; align-items: center; gap: 12px; }
+.sw-rank { color: #f0c419; font-weight: 800; font-size: 20px; }
+.sw-logo { height: 32px; width: auto; object-fit: contain; }
+.sw-name { color: #ffffff; font-weight: 700; font-size: 20px; margin: 0; }
+.sw-geo { margin-left: auto; white-space: nowrap; font-size: 12px; font-weight: 600; color: #f0c419; border: 1px solid rgba(240,196,25,0.5); border-radius: 999px; padding: 4px 12px; }
+.sw-bonus { color: #f0c419; font-weight: 800; font-size: 30px; line-height: 1.25; margin: 18px 0; }
+.sw-claim { display: block; width: 100%; min-height: 52px; line-height: 52px; box-sizing: border-box; background: #f0c419; color: #1a1a1a; font-size: 16px; font-weight: 800; text-align: center; text-decoration: none; border-radius: 12px; }
+.sw-claim:hover { background: #d9ae14; }
+.sw-under { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; font-size: 0.82em; }
+.sw-under .sw-review { color: inherit; }
+.sw-under .sw-tc { color: var(--muted, #8a8f9e); }
+@media (max-width: 600px) {
+  .sw-top-row { flex-wrap: wrap; }
+  .sw-geo { margin-left: 0; }
+  .sw-bonus { font-size: 24px; }
+  .sw-under { flex-direction: column; gap: 6px; align-items: flex-start; }
 }
-.kenya-card .bonus-badge {
-  display: block; margin-top: 8px;
-  background: linear-gradient(135deg, rgba(240,196,25,0.22), rgba(212,175,55,0.10));
-  border: 1px solid var(--gold);
-  color: var(--gold-light);
-  font-weight: 800; font-size: 1.05rem;
-  padding: 9px 16px; border-radius: 10px;
-}
-.kenya-card .bonus-badge .bonus-note {
-  display: block; font-weight: 500; font-size: 0.78rem; color: var(--muted); margin-top: 3px;
-}
-.kenya-card .claim-btn { width: 100%; text-align: center; font-size: 1.05rem; padding: 14px 24px; }
-.kenya-card .review-link { width: 100%; margin: 0; font-size: 0.9rem; }
-.kenya-card .tc-line { width: 100%; margin: 0; font-size: 0.75rem; color: var(--muted); }
 </style>
 
 <script type="application/ld+json">
@@ -102,31 +97,34 @@
 
   <section style="border:none;padding-top:10px;">
     <h2>Top Picks for Kenya</h2>
-    <div class="rank-card kenya-card">
-          <div class="rank-number">#1</div>
-          <div class="rank-info">
-            <img class="rank-logo" src="assets/images/cloudbet-logo.svg" alt="Cloudbet logo" loading="lazy">
-            <h3>Cloudbet</h3>
-            <span class="geo-tag">Best for Kenya</span>
-            <div class="bonus-badge">🎁 100% up to 5 BTC</div>
-            <p>High betting limits and strong crypto infrastructure, plus a combined sportsbook and casino. Kenya is not on Cloudbet's published restricted-jurisdictions list.</p>
-          </div>
-          <a class="btn claim-btn" href="https://cldbt.cloud/go/en/landing/bitcoin-bonus?af_token=99f4e7ff12c659399db54721b57773fc" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-          <p class="review-link"><a href="cloudbet-review.html">Read review →</a></p>
-          <p class="tc-line">T&C apply, 18+</p>
-        </div><div class="rank-card kenya-card">
-          <div class="rank-number">#2</div>
-          <div class="rank-info">
-            <img class="rank-logo" src="assets/images/placeholder-cashy.svg" alt="Cashy" loading="lazy">
-            <h3>Cashy</h3>
-            <span class="geo-tag">Best for Kenya</span>
-            <div class="bonus-badge">🎁 Welcome Bonus<span class="bonus-note">Check the current offer on the casino site</span></div>
-            <p>Crypto-first casino by the BitStarz operator group with fast payouts. Kenya is not on Cashy's official restricted-countries list (Terms, section 3.6, September 2026) — Kenyan players can deposit and play.</p>
-          </div>
-          <a class="btn claim-btn" href="https://gocashy.com/bjjzhlaar" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-          <p class="review-link"><a href="cashy-review.html">Read review →</a></p>
-          <p class="tc-line">T&C apply, 18+</p>
-        </div>
+    <div class="sw-card">
+  <div class="sw-top-row">
+    <span class="sw-rank">#1</span>
+    <img class="sw-logo" src="assets/images/cloudbet-logo.svg" alt="Cloudbet logo" loading="lazy">
+    <h3 class="sw-name">Cloudbet</h3>
+    <span class="sw-geo">Best for Kenya</span>
+  </div>
+  <div class="sw-bonus">100% up to 5 BTC</div>
+  <a class="sw-claim" href="https://cldbt.cloud/go/en/landing/bitcoin-bonus?af_token=99f4e7ff12c659399db54721b57773fc" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
+  <div class="sw-under">
+    <a class="sw-review" href="cloudbet-review.html">Read review &rarr;</a>
+    <span class="sw-tc">T&amp;C apply, 18+</span>
+  </div>
+</div>
+<div class="sw-card">
+  <div class="sw-top-row">
+    <span class="sw-rank">#2</span>
+    <img class="sw-logo" src="assets/images/placeholder-cashy.svg" alt="Cashy" loading="lazy">
+    <h3 class="sw-name">Cashy</h3>
+    <span class="sw-geo">Best for Kenya</span>
+  </div>
+  <div class="sw-bonus">Welcome Bonus — check the current offer on the casino site</div>
+  <a class="sw-claim" href="https://gocashy.com/bjjzhlaar" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
+  <div class="sw-under">
+    <a class="sw-review" href="cashy-review.html">Read review &rarr;</a>
+    <span class="sw-tc">T&amp;C apply, 18+</span>
+  </div>
+</div>
   </section>
 
   <section>
