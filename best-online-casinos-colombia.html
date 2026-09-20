@@ -10,47 +10,26 @@
 <link rel="stylesheet" href="assets/css/banner-slots.css">
 
 <style>
-/* Colombia top picks — page-scoped bonus card layout */
-.rank-card.co-card { flex-direction: column; align-items: stretch; }
-.rank-card.co-card .rank-number { min-width: 0; }
-.geo-tag {
-  display: inline-block;
-  background: rgba(27, 138, 90, 0.15);
-  border: 1px solid var(--emerald);
-  color: #7ddba6;
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 20px;
-  margin-left: 6px;
-  vertical-align: middle;
+/* Top-list compact rows (page-scoped, do not move to assets/css/style.css) */
+.sw-card { background: #151a28; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 20px 24px; margin: 0 0 16px; }
+.sw-top-row { display: flex; align-items: center; gap: 12px; }
+.sw-rank { color: #f0c419; font-weight: 800; font-size: 20px; }
+.sw-logo { height: 40px; width: 40px; object-fit: contain; }
+.sw-name { color: #ffffff; font-weight: 700; font-size: 20px; margin: 0; }
+.sw-tag { margin-left: auto; white-space: nowrap; font-size: 12px; font-weight: 600; color: #f0c419; border: 1px solid rgba(240,196,25,0.5); border-radius: 999px; padding: 4px 12px; }
+.sw-bonus { color: #f0c419; font-weight: 800; font-size: 30px; line-height: 1.25; margin: 18px 0; }
+.sw-claim { display: block; width: 100%; min-height: 52px; line-height: 52px; box-sizing: border-box; background: #f0c419; color: #1a1a1a; font-size: 16px; font-weight: 800; text-align: center; text-decoration: none; border-radius: 12px; }
+.sw-claim:hover { background: #d9ae14; }
+.sw-under { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; font-size: 0.82em; }
+.sw-under .sw-review { color: inherit; }
+.sw-under .sw-tc { color: var(--muted, #8a8f9e); }
+.sw-geo-line { color: var(--muted, #8a8f9e); margin: -6px 0 18px; }
+@media (max-width: 600px) {
+  .sw-top-row { flex-wrap: wrap; }
+  .sw-tag { margin-left: 0; }
+  .sw-bonus { font-size: 24px; }
+  .sw-under { flex-direction: column; gap: 6px; align-items: flex-start; }
 }
-.bonus-badge {
-  display: inline-block;
-  margin: 12px 0 4px;
-  padding: 10px 18px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, rgba(212,175,55,0.22), rgba(212,175,55,0.08));
-  border: 1px dashed var(--gold);
-  color: var(--gold-light);
-  font-weight: 800;
-  font-size: 1.1rem;
-}
-.claim-btn {
-  display: block;
-  text-align: center;
-  margin-top: 10px;
-  padding: 15px 24px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--gold-light), var(--gold));
-  color: #1a1408 !important;
-  font-weight: 800;
-  font-size: 1.15rem;
-  text-decoration: none !important;
-}
-.claim-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4); }
-.review-link { display: inline-block; margin-top: 8px; color: var(--gold-light); font-weight: 600; }
-.tc-note { font-size: 0.72rem; color: var(--muted); margin: 6px 0 0; }
 </style>
 
 
@@ -138,57 +117,63 @@
 <div class="banner-slot banner-728x90" data-brand="cloudbet" data-size="728x90" data-status="pending" aria-hidden="true"></div>
 <section style="border:none;padding-top:10px;">
     <h2>Top Picks for Colombia</h2>
-    <div class="rank-card co-card">
-          <div class="rank-number">#1</div>
-          <div class="rank-info">
-            <img class="rank-logo" src="assets/images/cloudbet-logo.svg" alt="Cloudbet logo" loading="lazy">
-            <h3>Cloudbet</h3>
-            <span class="tag">Best for High Rollers &amp; Sports</span>
-            <span class="geo-tag">Best for Colombia</span>
-            <p>Colombia is not on Cloudbet's published restricted-jurisdictions list — Colombian players are accepted. Crypto-first sportsbook and casino with high betting limits and strong crypto infrastructure.</p>
-            <div class="bonus-badge">100% up to 5 BTC</div>
-            <a class="claim-btn" href="https://cldbt.cloud/go/en/landing/bitcoin-bonus?af_token=99f4e7ff12c659399db54721b57773fc" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-            <a class="review-link" href="cloudbet-review.html">Read review →</a>
-            <p class="tc-note">T&amp;C apply, 18+</p>
-          </div>
-        </div><div class="rank-card co-card">
-          <div class="rank-number">#2</div>
-          <div class="rank-info">
-            <img class="rank-logo" src="assets/images/placeholder-bitstarz.svg" alt="BitStarz" loading="lazy">
-            <h3>BitStarz</h3>
-            <span class="tag">Best Welcome Bonus</span>
-            <span class="geo-tag">Best for Colombia</span>
-            <p>Colombia is not on BitStarz's restricted-countries list in its official Terms &amp; Conditions — Colombian players are accepted. Hybrid crypto/fiat casino, established 2014, with a generous multi-deposit welcome package. Note: NetEnt games are unavailable in Colombia under the provider's own licensing policy.</p>
-            <div class="bonus-badge">up to 5 BTC + 180 Free Spins</div>
-            <a class="claim-btn" href="https://bzstarz2.com/bswxoxzh5" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-            <a class="review-link" href="bitstarz-review.html">Read review →</a>
-            <p class="tc-note">T&amp;C apply, 18+</p>
-          </div>
-        </div><div class="rank-card co-card">
-          <div class="rank-number">#3</div>
-          <div class="rank-info">
-            <img class="rank-logo" src="assets/images/placeholder-cashy.svg" alt="Cashy" loading="lazy">
-            <h3>Cashy</h3>
-            <span class="tag">New from BitStarz Group</span>
-            <span class="geo-tag">Best for Colombia</span>
-            <p>Crypto-first casino launched August 2026, operated by Gareton B.V. — the same licensed operator behind BitStarz. Bonus offers change frequently — always check the current bonus terms on the casino site before depositing. Colombia geo-availability was not independently verified at the time of writing: check Cashy's terms before depositing.</p>
-            <div class="bonus-badge">Welcome Bonus — check the current offer on the casino site</div>
-            <a class="claim-btn" href="https://gocashy.com/bjjzhlaar" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-            <a class="review-link" href="cashy-review.html">Read review →</a>
-            <div class="rank-card co-card">
-          <div class="rank-number">#4</div>
-          <div class="rank-info">
-            <img class="rank-logo" src="assets/images/placeholder-rollbit.svg" alt="Rollbit" loading="lazy">
-            <h3>Rollbit</h3>
-            <span class="tag">Crypto Casino &amp; Sportsbook</span>
-            <span class="geo-tag">Best for Colombia</span>
-            <p>Established crypto casino (2020) with rakeback rewards instead of a classic welcome bonus, plus a sportsbook and RLB token perks. Colombia is not on Rollbit's published restricted-jurisdictions list.</p>
-            <div class="bonus-badge">Welcome Bonus — check the current offer on the casino site</div>
-            <a class="claim-btn" href="https://rollbit.com/referral/SPINORAWINS01" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-            <a class="review-link" href="rollbit-review.html">Read review →</a>
-            <p class="tc-note">T&amp;C apply, 18+</p>
-          </div>
-        </div>
+    <p class="sw-geo-line">Best for Colombia — offshore options ranked by partner reliability, payments and bonus terms.</p>
+    <div class="sw-card">
+      <div class="sw-top-row">
+        <span class="sw-rank">#1</span>
+        <img class="sw-logo" src="assets/images/cloudbet-logo.svg" alt="Cloudbet logo" loading="lazy">
+        <h3 class="sw-name">Cloudbet</h3>
+        <span class="sw-tag">Best for High Rollers</span>
+      </div>
+      <div class="sw-bonus">100% up to 5 BTC</div>
+      <a class="sw-claim" href="https://cldbt.cloud/go/en/landing/bitcoin-bonus?af_token=99f4e7ff12c659399db54721b57773fc" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
+      <div class="sw-under">
+        <a class="sw-review" href="cloudbet-review.html">Read review &rarr;</a>
+        <span class="sw-tc">T&amp;C apply, 18+</span>
+      </div>
+    </div>
+    <div class="sw-card">
+      <div class="sw-top-row">
+        <span class="sw-rank">#2</span>
+        <img class="sw-logo" src="assets/images/placeholder-bitstarz.svg" alt="BitStarz" loading="lazy">
+        <h3 class="sw-name">BitStarz</h3>
+        <span class="sw-tag">Best Welcome Bonus</span>
+      </div>
+      <div class="sw-bonus">up to 5 BTC + 180 Free Spins</div>
+      <a class="sw-claim" href="https://bzstarz2.com/bswxoxzh5" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
+      <div class="sw-under">
+        <a class="sw-review" href="bitstarz-review.html">Read review &rarr;</a>
+        <span class="sw-tc">T&amp;C apply, 18+</span>
+      </div>
+    </div>
+    <div class="sw-card">
+      <div class="sw-top-row">
+        <span class="sw-rank">#3</span>
+        <img class="sw-logo" src="assets/images/placeholder-cashy.svg" alt="Cashy" loading="lazy">
+        <h3 class="sw-name">Cashy</h3>
+        <span class="sw-tag">New from BitStarz Group</span>
+      </div>
+      <div class="sw-bonus">Welcome Bonus — check the current offer on the casino site</div>
+      <a class="sw-claim" href="https://gocashy.com/bjjzhlaar" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
+      <div class="sw-under">
+        <a class="sw-review" href="cashy-review.html">Read review &rarr;</a>
+        <span class="sw-tc">T&amp;C apply, 18+</span>
+      </div>
+    </div>
+    <div class="sw-card">
+      <div class="sw-top-row">
+        <span class="sw-rank">#4</span>
+        <img class="sw-logo" src="assets/images/placeholder-rollbit.svg" alt="Rollbit" loading="lazy">
+        <h3 class="sw-name">Rollbit</h3>
+        <span class="sw-tag">Crypto Casino & Sportsbook</span>
+      </div>
+      <div class="sw-bonus">Welcome Bonus — check the current offer on the casino site</div>
+      <a class="sw-claim" href="https://rollbit.com/referral/SPINORAWINS01" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
+      <div class="sw-under">
+        <a class="sw-review" href="rollbit-review.html">Read review &rarr;</a>
+        <span class="sw-tc">T&amp;C apply, 18+</span>
+      </div>
+    </div>
   </section>
 <!-- BANNER SLOT: official bitstarz 300x250 — pending, do not fill manually -->
 <div class="banner-slot banner-300x250" data-brand="bitstarz" data-size="300x250" data-status="pending" aria-hidden="true"></div>
