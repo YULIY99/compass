@@ -9,16 +9,25 @@
 <link rel="stylesheet" href="assets/css/style.css">
 
 <style>
-/* --- Mexico top-cards redesign: page-scoped, do not move to style.css --- */
-.mx-top-card { position: relative; }
-.mx-logo-row { display: flex; align-items: center; gap: 12px; margin: 10px 0 6px; }
-.mx-logo-row h3 { margin: 0; font-size: 1.35em; }
-.mx-logo-row .rank-logo { width: 44px; height: 44px; object-fit: contain; }
-.geo-tag { display: inline-block; font-size: 0.8em; font-weight: 600; padding: 3px 12px; border-radius: 999px; background: #e8f0ff; color: #1a4fd6; margin: 2px 0 10px; }
-.bonus-badge { display: inline-block; font-size: 1.2em; font-weight: 800; background: #fff7e0; border: 2px dashed #e0a800; border-radius: 10px; padding: 10px 18px; margin: 2px 0 16px; color: #7a5b00; }
-.claim-btn { display: block; width: 100%; text-align: center; font-size: 1.1em; font-weight: 700; padding: 14px; margin: 0 0 10px; box-sizing: border-box; }
-.mx-review { margin: 6px 0 4px; }
-.tc-line { font-size: 0.78em; color: var(--muted, #777); margin: 2px 0 0; }
+/* Top-card redesign v2 (page-scoped, do not move to assets/css/style.css) */
+.sw-card { background: #151a28; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 24px; margin: 0 0 16px; }
+.sw-top-row { display: flex; align-items: center; gap: 12px; }
+.sw-rank { color: #f0c419; font-weight: 800; font-size: 20px; }
+.sw-logo { height: 32px; width: auto; object-fit: contain; }
+.sw-name { color: #ffffff; font-weight: 700; font-size: 20px; margin: 0; }
+.sw-geo { margin-left: auto; white-space: nowrap; font-size: 12px; font-weight: 600; color: #f0c419; border: 1px solid rgba(240,196,25,0.5); border-radius: 999px; padding: 4px 12px; }
+.sw-bonus { color: #f0c419; font-weight: 800; font-size: 30px; line-height: 1.25; margin: 18px 0; }
+.sw-claim { display: block; width: 100%; min-height: 52px; line-height: 52px; box-sizing: border-box; background: #f0c419; color: #1a1a1a; font-size: 16px; font-weight: 800; text-align: center; text-decoration: none; border-radius: 12px; }
+.sw-claim:hover { background: #d9ae14; }
+.sw-under { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; font-size: 0.82em; }
+.sw-under .sw-review { color: inherit; }
+.sw-under .sw-tc { color: var(--muted, #8a8f9e); }
+@media (max-width: 600px) {
+  .sw-top-row { flex-wrap: wrap; }
+  .sw-geo { margin-left: 0; }
+  .sw-bonus { font-size: 24px; }
+  .sw-under { flex-direction: column; gap: 6px; align-items: flex-start; }
+}
 </style>
 
 <script type="application/ld+json">
@@ -95,40 +104,48 @@
 
   <section style="border:none;padding-top:10px;">
     <h2>Top Picks for Mexico</h2>
-    <div class="rank-card mx-top-card">
-          <div class="rank-number">#1</div>
-          <div class="mx-logo-row">
-            <img class="rank-logo" src="assets/images/cloudbet-logo.svg" alt="Cloudbet logo" loading="lazy">
-            <h3>Cloudbet</h3>
-          </div>
-          <span class="geo-tag">Best for Mexico</span><br>
-          <div class="bonus-badge">100% up to 5 BTC</div>
-          <a class="btn claim-btn" href="https://cldbt.cloud/go/en/landing/bitcoin-bonus?af_token=99f4e7ff12c659399db54721b57773fc" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-          <p class="mx-review"><a href="cloudbet-review.html">Read review →</a></p>
-          <p class="tc-line">T&C apply, 18+</p>
-        </div><div class="rank-card mx-top-card">
-          <div class="rank-number">#2</div>
-          <div class="mx-logo-row">
-            <img class="rank-logo" src="assets/images/placeholder-bitstarz.svg" alt="BitStarz" loading="lazy">
-            <h3>BitStarz</h3>
-          </div>
-          <span class="geo-tag">Best for Mexico</span><br>
-          <div class="bonus-badge">up to 5 BTC + 180 Free Spins</div>
-          <a class="btn claim-btn" href="https://bzstarz2.com/bswxoxzh5" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-          <p class="mx-review"><a href="bitstarz-review.html">Read review →</a></p>
-          <p class="tc-line">T&C apply, 18+</p>
-        </div><div class="rank-card mx-top-card">
-          <div class="rank-number">#3</div>
-          <div class="mx-logo-row">
-            <img class="rank-logo" src="assets/images/placeholder-cashy.svg" alt="Cashy" loading="lazy">
-            <h3>Cashy</h3>
-          </div>
-          <span class="geo-tag">Best for Mexico</span><br>
-          <div class="bonus-badge">Welcome Bonus — check the current offer on the casino site</div>
-          <a class="btn claim-btn" href="https://gocashy.com/bjjzhlaar" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-          <p class="mx-review"><a href="cashy-review.html">Read review →</a></p>
-          <p class="tc-line">T&C apply, 18+</p>
-        </div>
+    <div class="sw-card">
+  <div class="sw-top-row">
+    <span class="sw-rank">#1</span>
+    <img class="sw-logo" src="assets/images/cloudbet-logo.svg" alt="Cloudbet logo" loading="lazy">
+    <h3 class="sw-name">Cloudbet</h3>
+    <span class="sw-geo">Best for Mexico</span>
+  </div>
+  <div class="sw-bonus">100% up to 5 BTC</div>
+  <a class="sw-claim" href="https://cldbt.cloud/go/en/landing/bitcoin-bonus?af_token=99f4e7ff12c659399db54721b57773fc" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
+  <div class="sw-under">
+    <a class="sw-review" href="cloudbet-review.html">Read review &rarr;</a>
+    <span class="sw-tc">T&amp;C apply, 18+</span>
+  </div>
+</div>
+<div class="sw-card">
+  <div class="sw-top-row">
+    <span class="sw-rank">#2</span>
+    <img class="sw-logo" src="assets/images/placeholder-bitstarz.svg" alt="BitStarz" loading="lazy">
+    <h3 class="sw-name">BitStarz</h3>
+    <span class="sw-geo">Best for Mexico</span>
+  </div>
+  <div class="sw-bonus">up to 5 BTC + 180 Free Spins</div>
+  <a class="sw-claim" href="https://bzstarz2.com/bswxoxzh5" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
+  <div class="sw-under">
+    <a class="sw-review" href="bitstarz-review.html">Read review &rarr;</a>
+    <span class="sw-tc">T&amp;C apply, 18+</span>
+  </div>
+</div>
+<div class="sw-card">
+  <div class="sw-top-row">
+    <span class="sw-rank">#3</span>
+    <img class="sw-logo" src="assets/images/placeholder-cashy.svg" alt="Cashy" loading="lazy">
+    <h3 class="sw-name">Cashy</h3>
+    <span class="sw-geo">Best for Mexico</span>
+  </div>
+  <div class="sw-bonus">Welcome Bonus — check the current offer on the casino site</div>
+  <a class="sw-claim" href="https://gocashy.com/bjjzhlaar" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
+  <div class="sw-under">
+    <a class="sw-review" href="cashy-review.html">Read review &rarr;</a>
+    <span class="sw-tc">T&amp;C apply, 18+</span>
+  </div>
+</div>
   </section>
 
   <section>
