@@ -10,24 +10,25 @@
 <link rel="stylesheet" href="assets/css/banner-slots.css">
 
 <style>
-/* Brazil page: casino card (page-scoped redesign) */
-.br-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px;max-width:640px;}
-.br-card-top{display:flex;align-items:center;gap:14px;}
-.br-rank{color:#ffd34d;font-weight:800;font-size:1.35rem;white-space:nowrap;}
-.br-logo{height:32px;width:auto;display:block;}
-.br-name{color:#fff;font-weight:800;font-size:20px;margin:0;white-space:nowrap;}
-.br-geo-pill{margin-left:auto;font-size:.75rem;color:#ffd34d;border:1px solid rgba(255,211,77,.45);border-radius:999px;padding:4px 12px;white-space:nowrap;}
-.br-bonus{color:#ffd34d;font-weight:800;font-size:30px;line-height:1.2;margin:18px 0 4px;}
-.br-desc{font-size:.9rem;color:var(--muted,#8a8a8a);margin:0 0 16px;}
-.br-btn{display:block;width:100%;min-height:52px;line-height:52px;border-radius:12px;background:#ffd34d;color:#1a1408;font-size:16px;font-weight:800;text-align:center;text-decoration:none;margin:4px 0 10px;box-sizing:border-box;}
-.br-btn:hover{background:#ffc933;}
-.br-under{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;}
-.br-under a{color:#ffd34d;text-decoration:none;}
-.br-under .tandc{color:var(--muted,#8a8a8a);}
-@media (max-width:520px){
-  .br-card-top{flex-direction:column;align-items:flex-start;}
-  .br-geo-pill{margin-left:0;}
-  .br-under{flex-direction:column;align-items:flex-start;gap:6px;}
+/* Top-list compact rows (page-scoped, do not move to assets/css/style.css) */
+.sw-card { background: #151a28; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 20px 24px; margin: 0 0 16px; }
+.sw-top-row { display: flex; align-items: center; gap: 12px; }
+.sw-rank { color: #f0c419; font-weight: 800; font-size: 20px; }
+.sw-logo { height: 40px; width: 40px; object-fit: contain; }
+.sw-name { color: #ffffff; font-weight: 700; font-size: 20px; margin: 0; }
+.sw-tag { margin-left: auto; white-space: nowrap; font-size: 12px; font-weight: 600; color: #f0c419; border: 1px solid rgba(240,196,25,0.5); border-radius: 999px; padding: 4px 12px; }
+.sw-bonus { color: #f0c419; font-weight: 800; font-size: 30px; line-height: 1.25; margin: 18px 0; }
+.sw-claim { display: block; width: 100%; min-height: 52px; line-height: 52px; box-sizing: border-box; background: #f0c419; color: #1a1a1a; font-size: 16px; font-weight: 800; text-align: center; text-decoration: none; border-radius: 12px; }
+.sw-claim:hover { background: #d9ae14; }
+.sw-under { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; font-size: 0.82em; }
+.sw-under .sw-review { color: inherit; }
+.sw-under .sw-tc { color: var(--muted, #8a8f9e); }
+.sw-geo-line { color: var(--muted, #8a8f9e); margin: -6px 0 18px; }
+@media (max-width: 600px) {
+  .sw-top-row { flex-wrap: wrap; }
+  .sw-tag { margin-left: 0; }
+  .sw-bonus { font-size: 24px; }
+  .sw-under { flex-direction: column; gap: 6px; align-items: flex-start; }
 }
 </style>
 
@@ -102,31 +103,33 @@
 <div class="banner-slot banner-728x90" data-brand="cloudbet" data-size="728x90" data-status="pending" aria-hidden="true"></div>
 <section style="border:none;padding-top:10px;">
     <h2>Top Picks for Brazil</h2>
-    <div class="br-card">
-      <div class="br-card-top">
-        <span class="br-rank">#1</span>
-        <img class="br-logo" src="assets/images/cloudbet-logo.svg" alt="Cloudbet logo" loading="lazy">
-        <h3 class="br-name">Cloudbet</h3>
-        <span class="br-geo-pill">Best for Brazil</span>
+    <p class="sw-geo-line">Best for Brazil — offshore options ranked by partner reliability, payments and bonus terms.</p>
+    <div class="sw-card">
+      <div class="sw-top-row">
+        <span class="sw-rank">#1</span>
+        <img class="sw-logo" src="assets/images/cloudbet-logo.svg" alt="Cloudbet logo" loading="lazy">
+        <h3 class="sw-name">Cloudbet</h3>
+        <span class="sw-tag">Best for High Rollers</span>
       </div>
-      <div class="br-bonus">100% up to 5 BTC</div>
-      <p class="br-desc">Crypto-first casino and sportsbook with high betting limits and one wallet for both. Brazil is not on Cloudbet's official restricted-jurisdictions list. Not SPA-licensed — Brazil may block the domain or PIX rails at any time, so verify access before depositing.</p>
-      <a class="br-btn" href="https://cldbt.cloud/go/en/landing/bitcoin-bonus?af_token=99f4e7ff12c659399db54721b57773fc" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-      <div class="br-under">
-        <a href="cloudbet-review.html">Read review →</a>
-            <div class="br-card">
-      <div class="br-card-top">
-        <span class="br-rank">#2</span>
-        <img class="br-logo" src="assets/images/placeholder-rollbit.svg" alt="Rollbit" loading="lazy">
-        <h3 class="br-name">Rollbit</h3>
-        <span class="br-geo-pill">Best for Brazil</span>
+      <div class="sw-bonus">100% up to 5 BTC</div>
+      <a class="sw-claim" href="https://cldbt.cloud/go/en/landing/bitcoin-bonus?af_token=99f4e7ff12c659399db54721b57773fc" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
+      <div class="sw-under">
+        <a class="sw-review" href="cloudbet-review.html">Read review &rarr;</a>
+        <span class="sw-tc">T&amp;C apply, 18+</span>
       </div>
-      <div class="br-bonus">Welcome Bonus — check the current offer on the casino site</div>
-      <p class="br-desc">Established crypto casino (2020) with rakeback rewards instead of a classic welcome bonus, plus a sportsbook and RLB token perks. Brazil is not on Rollbit's published restricted-jurisdictions list. Not SPA-licensed — Brazil may block the domain at any time, so verify access before depositing.</p>
-      <a class="br-btn" href="https://rollbit.com/referral/SPINORAWINS01" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
-      <div class="br-under">
-        <a href="rollbit-review.html">Read review →</a>
-        <span class="tandc">T&amp;C apply, 18+</span>
+    </div>
+    <div class="sw-card">
+      <div class="sw-top-row">
+        <span class="sw-rank">#2</span>
+        <img class="sw-logo" src="assets/images/placeholder-rollbit.svg" alt="Rollbit" loading="lazy">
+        <h3 class="sw-name">Rollbit</h3>
+        <span class="sw-tag">Crypto Casino & Sportsbook</span>
+      </div>
+      <div class="sw-bonus">Welcome Bonus — check the current offer on the casino site</div>
+      <a class="sw-claim" href="https://rollbit.com/referral/SPINORAWINS01" target="_blank" rel="nofollow sponsored noopener">Claim Bonus</a>
+      <div class="sw-under">
+        <a class="sw-review" href="rollbit-review.html">Read review &rarr;</a>
+        <span class="sw-tc">T&amp;C apply, 18+</span>
       </div>
     </div>
   </section>
