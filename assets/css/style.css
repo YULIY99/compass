@@ -514,7 +514,7 @@ html[data-theme] .cashy-text-card .ctc-brand { color: var(--text); }
 html[data-theme] .cashy-text-card .ctc-bonus { color: var(--accent-strong); }
 html[data-theme] .cashy-text-card .ctc-note { color: var(--muted); }
 
-html[data-theme] .home-sidebar { background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow); top: 110px; max-height: calc(100vh - 126px); overflow-y: auto; width: 310px; flex-basis: 310px; padding: 16px; scrollbar-color: var(--border) transparent; }
+html[data-theme] .home-sidebar { background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow); width: 310px; flex-basis: 310px; padding: 16px; align-self: flex-start; }
 html[data-theme] .home-sidebar h2 { color: var(--text); margin-bottom: 12px; }
 html[data-theme] .sq-rank { gap: 14px; align-items: center; }
 html[data-theme] .sq-card { position: relative; display: flex; flex-direction: column; width: 100%; max-width: 300px; aspect-ratio: 1/1; min-height: 0; overflow: hidden; text-decoration: none; background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); color: var(--text); }
@@ -569,7 +569,7 @@ main .hero, main > .container, .home-sidebar, .article-toplist { animation: gent
 }
 @media (max-width: 900px) {
   .homepage-layout { flex-direction: column; }
-  html[data-theme] .home-sidebar { order: -1; position: static; width: 100%; flex: none; max-height: 355px; }
+  html[data-theme] .home-sidebar { order: -1; position: static; width: 100%; flex: none; max-height: 420px; overflow-y: auto; }
   main.has-article-toplist > .container { flex-basis: 100%; order: 2; }
   main.has-article-toplist > .hero { order: 0; }
   .article-toplist { order: 1; position: static; flex-basis: 100%; width: 100%; max-height: 260px; }
