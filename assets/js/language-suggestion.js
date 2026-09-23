@@ -15,9 +15,12 @@
   syncButton();
 
   button.addEventListener('click', () => {
+    root.classList.add('theme-anim');
+    void root.offsetWidth;
     root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
     try { localStorage.setItem('spinora-theme', root.dataset.theme); } catch (error) {}
     syncButton();
+    setTimeout(() => root.classList.remove('theme-anim'), 420);
   });
 
   systemDark.addEventListener?.('change', event => {

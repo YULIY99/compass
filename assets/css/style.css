@@ -438,6 +438,11 @@ body, .site-header, .card, .rank-card, .sw-card, .home-sidebar, footer,
   transition: background-color .22s ease, border-color .22s ease, color .22s ease,
     box-shadow .22s ease;
 }
+/* Smooth theme cross-fade: applied briefly by JS while toggling data-theme. */
+html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *::after {
+  transition: background-color .35s ease, color .35s ease, border-color .35s ease,
+    box-shadow .35s ease, fill .35s ease, stroke .35s ease !important;
+}
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 
 .container { max-width: 1180px; }
@@ -511,18 +516,17 @@ html[data-theme] .cashy-text-card .ctc-note { color: var(--muted); }
 
 html[data-theme] .home-sidebar { background: var(--card-bg); border: 1px solid var(--border); box-shadow: var(--shadow); top: 110px; max-height: calc(100vh - 126px); overflow-y: auto; width: 310px; flex-basis: 310px; padding: 16px; scrollbar-color: var(--border) transparent; }
 html[data-theme] .home-sidebar h2 { color: var(--text); margin-bottom: 12px; }
-html[data-theme] .sq-rank { gap: 8px; }
-html[data-theme] .sq-card { aspect-ratio: auto; max-width: none; min-height: 88px; flex-direction: row; align-items: stretch; background: var(--bg-alt); border: 1px solid var(--border); box-shadow: none; border-radius: 11px; color: var(--text); }
+html[data-theme] .sq-rank { gap: 14px; align-items: center; }
+html[data-theme] .sq-card { position: relative; display: flex; flex-direction: column; width: 100%; max-width: 300px; aspect-ratio: 1/1; min-height: 0; overflow: hidden; text-decoration: none; background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); color: var(--text); }
 html[data-theme] .sq-card:hover { border-color: var(--accent); box-shadow: var(--shadow); transform: translateY(-2px); text-decoration: none; }
-html[data-theme] .sq-card:nth-child(-n+3) { border-left: 3px solid var(--accent); }
-html[data-theme] .sq-banner { flex: 0 0 72px; width: 72px; min-height: 88px; background: var(--rank-image-bg); }
-html[data-theme] .sq-banner img { object-fit: contain; }
-html[data-theme] .sq-rank-badge { top: 4px; left: 4px; min-width: 22px; height: 22px; padding: 0 4px; font-size: .65rem; background: var(--rank-badge-bg); color: var(--rank-badge-text); border-color: var(--accent); }
-html[data-theme] .sq-ad { top: 5px; right: 6px; color: var(--muted); background: var(--card-bg); border-color: var(--border); font-size: .5rem; }
-html[data-theme] .sq-bar { padding: 8px 9px; background: transparent; border: 0; min-width: 0; }
-html[data-theme] .sq-info strong { color: var(--text); font-size: .83rem; padding-right: 24px; }
-html[data-theme] .sq-info span { color: var(--muted); font-size: .68rem; line-height: 1.25; margin-top: 2px; }
-html[data-theme] .sq-cta { display: inline-block; margin-top: 5px; padding: 3px 9px; border-radius: 6px; font-size: .66rem; }
+html[data-theme] .sq-banner { position: relative; flex: 0 0 58%; width: 100%; min-height: 0; overflow: hidden; background: var(--rank-image-bg); }
+html[data-theme] .sq-banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+html[data-theme] .sq-rank-badge { position: absolute; top: 10px; left: 10px; z-index: 3; min-width: 28px; height: 28px; padding: 0 8px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: var(--rank-badge-bg); color: var(--accent-strong); border: 1px solid var(--accent); font-weight: 800; font-size: .8rem; }
+html[data-theme] .sq-ad { position: absolute; top: 10px; right: 10px; z-index: 3; font-size: .6rem; font-weight: 700; letter-spacing: .08em; color: var(--muted); background: var(--card-bg); border: 1px solid var(--border); border-radius: 6px; padding: 3px 7px; }
+html[data-theme] .sq-bar { flex: 1 1 auto; min-height: 0; padding: 10px 14px 12px; background: transparent; border: 0; border-top: 1px solid var(--border); min-width: 0; }
+html[data-theme] .sq-info strong { display: block; color: var(--text); font-size: .95rem; font-weight: 800; line-height: 1.25; padding-right: 0; }
+html[data-theme] .sq-info span { display: block; color: var(--muted); font-size: .72rem; line-height: 1.45; margin-top: 3px; }
+html[data-theme] .sq-cta { display: inline-block; margin-top: 9px; padding: 6px 14px; border-radius: 8px; font-size: .72rem; font-weight: 800; white-space: nowrap; }
 html[data-theme] .trust-strip { background: var(--card-bg); border-color: var(--border); box-shadow: var(--shadow); }
 html[data-theme] .trust-strip h3 { color: var(--text); }
 html[data-theme] .trust-strip .updated { color: var(--muted); }
