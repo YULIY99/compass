@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de requisitos de apuesta | Spinora Wins</title>
+<meta name="description" content="Calcula exactamente cuánto debes apostar para liberar un bono de casino, ajustado según la ponderación de cada juego.">
+<link rel="canonical" href="https://spinorawins.com/es/calculadora-requisitos-apuesta.html">
+<link rel="alternate" hreflang="en" href="https://spinorawins.com/tools/wagering-requirement-calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://spinorawins.com/tools/wagering-requirement-calculator.html">
+<link rel="alternate" hreflang="es" href="https://spinorawins.com/es/calculadora-requisitos-apuesta.html">
+<link rel="alternate" hreflang="pt" href="https://spinorawins.com/pt/calculadora-requisitos-aposta.html">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/language.css">
+<script defer src="/assets/js/wagering-calculator.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://spinorawins.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://spinorawins.com/tools/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Wagering Requirement Calculator",
+          "item": "https://spinorawins.com/tools/wagering-requirement-calculator.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/assets/js/language-suggestion.js" defer></script>
+</head>
+<body>
+<div class="language-suggestion" id="language-suggestion" hidden>
+  <div class="container"><a id="language-suggestion-link" href="#"></a><button type="button" id="language-suggestion-close" aria-label="Close">×</button></div>
+</div>
+<header class="site-header">
+  <div class="disclaimer-banner">18+. Jugar puede causar adicción. Hazlo con responsabilidad. Este sitio incluye enlaces de afiliados.</div>
+  <div class="container nav">
+    <a href="/es/" class="logo">Spinora<span>Wins</span></a>
+    <ul class="nav-links">
+      <li><a href="/es/base-datos-rtp-tragamonedas.html">RTP de tragamonedas</a></li>
+      <li><a href="/es/calculadora-requisitos-apuesta.html">Calculadora de requisitos de apuesta</a></li>
+      <li><a href="/es/comparador-de-bonos.html">Comparador de bonos</a></li>
+      <li><a href="/es/blog.html">Blog</a></li>
+      <li><a href="/es/metodologia.html">Cómo evaluamos</a></li>
+      <li><a href="/es/juego-responsable.html">Juego responsable</a></li>
+    </ul>
+    <nav class="language-switch" aria-label="Language"><a href="/tools/wagering-requirement-calculator.html" lang="en">EN</a> <a href="/es/calculadora-requisitos-apuesta.html" lang="es" aria-current="page">ES</a> <a href="/pt/calculadora-requisitos-aposta.html" lang="pt">PT</a></nav>
+  </div>
+</header>
+<main>
+
+<div class="container">
+  <div class="breadcrumbs"><a href="/es/">Inicio</a> / <a href="/es/herramientas.html">Herramientas</a> / Calculadora de requisitos de apuesta</div>
+  <h1>Calculadora de requisitos de apuesta</h1>
+  <p style="color:var(--muted);">Descubre exactamente cuánto debes apostar para liberar un bono. ¿Eres nuevo aquí? <a href="/es/requisitos-de-apuesta-explicados.html">Lee la explicación</a>.</p>
+
+  <div class="calc-form">
+    <div><label>Monto del bono</label><input type="number" id="bonus-amount" placeholder="p. ej. 100"></div>
+    <div><label>Monto del depósito</label><input type="number" id="deposit-amount" placeholder="p. ej. 100"></div>
+    <div><label>Multiplicador de requisitos (x)</label><input type="number" id="multiplier" placeholder="p. ej. 35"></div>
+    <div><label>Contribución del juego (%)</label><input type="number" id="weighting" placeholder="p. ej. 100" value="100"></div>
+    <div>
+      <label>Calcular los requisitos sobre</label>
+      <select id="basis" style="width:100%;background:var(--bg);color:var(--text);border:1px solid #2a2f37;padding:10px;border-radius:6px;">
+        <option value="bonus">Solo el monto del bono</option>
+        <option value="bonus+deposit">Bono + depósito</option>
+      </select>
+    </div>
+  </div>
+  <button class="btn" id="calc-btn">Calcular</button>
+
+  <div class="calc-result" id="calc-result" style="display:none;">
+    <p>Apuesta total requerida: <strong>$<span id="result-total"></span></strong></p>
+    <p>Apuesta efectiva (ajustada por la contribución del juego): <strong>$<span id="result-effective"></span></strong></p>
+  </div>
+
+  <section>
+    <h2>¿Qué cuenta para los requisitos?</h2>
+    <p>Los tragamonedas suelen contar al 100% para los requisitos; los juegos de mesa y el casino en vivo suelen aportar menos (p. ej. 10-20%) o nada. Revisa siempre los términos específicos del operador: esta calculadora usa la contribución que ingreses como estimación.</p>
+    <p><a href="/es/comparador-de-bonos.html">Compara bonos con distintos requisitos de apuesta →</a></p>
+  </section>
+</div>
+
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h2>Guías</h2>
+        <a href="/es/casinos-online-nigeria.html">Casinos en Nigeria</a>
+        <a href="/es/casinos-online-brasil.html">Casinos en Brasil</a>
+        <a href="/es/casinos-online-mexico.html">Casinos en México</a>
+        <a href="/es/casinos-online-colombia.html">Casinos en Colombia</a>
+        <a href="/es/casinos-online-kenia.html">Casinos en Kenia</a>
+        <a href="/es/casinos-online-sudafrica.html">Casinos en Sudáfrica</a>
+        <a href="/es/casinos-online-india.html">Casinos en India</a>
+      </div>
+      <div>
+        <h2>Métodos de pago</h2>
+        <a href="/es/casinos-pix-brasil.html">PIX (Brasil)</a>
+        <a href="/es/casinos-spei-mexico.html">SPEI (México)</a>
+        <a href="/es/casinos-pse-colombia.html">PSE (Colombia)</a>
+        <a href="/es/casinos-cripto-latam-africa.html">Pagos con criptomonedas</a>
+      </div>
+      <div>
+        <h2>Herramientas</h2>
+        <a href="/es/base-datos-rtp-tragamonedas.html">Base de datos RTP de tragamonedas</a>
+        <a href="/es/calculadora-requisitos-apuesta.html">Calculadora de requisitos de apuesta</a>
+        <a href="/es/comparador-de-bonos.html">Comparador de bonos</a>
+        <a href="/es/calculadora-valor-esperado-bono.html">Calculadora de valor esperado de bono</a>
+        <a href="/es/calculadora-valor-giros-gratis.html">Calculadora de valor de giros gratis</a>
+      </div>
+      <div>
+        <h2>Mejores casinos</h2>
+        <a href="/es/mejores-casinos-online-nigeria.html">Mejores en Nigeria</a>
+        <a href="/es/mejores-casinos-online-brasil.html">Mejores en Brasil</a>
+        <a href="/es/mejores-casinos-online-mexico.html">Mejores en México</a>
+        <a href="/es/mejores-casinos-online-colombia.html">Mejores en Colombia</a>
+        <a href="/es/mejores-casinos-online-kenia.html">Mejores en Kenia</a>
+        <a href="/es/mejores-casinos-online-sudafrica.html">Mejores en Sudáfrica</a>
+        <a href="/es/mejores-casinos-online-india.html">Mejores en India</a>
+      </div>
+      <div>
+        <h2>Juego responsable</h2>
+        <a href="/es/juego-responsable.html">Juego responsable</a>
+        <a href="/es/herramientas-autoexclusion.html">Herramientas de autoexclusión</a>
+        <a href="/es/metodologia.html">Metodología</a>
+        <a href="/es/quienes-somos.html">Quiénes somos</a>
+        <a href="/es/contacto.html">Contacto</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Spinora Wins. Editor independiente de afiliados. No somos un operador de juegos. Las probabilidades, los bonos y el estatus legal varían según la jurisdicción y cambian con frecuencia; confirma siempre en el sitio del operador.</p>
+      <p class="age-gate">El juego está restringido a la edad legal (18+/21+ según la jurisdicción). Si tú o alguien que conoces tiene un problema con el juego, busca ayuda: BeGambleAware (Reino Unido), National Council on Problem Gambling (EE. UU./recursos para Nigeria), CVV (Brasil) 188.</p>
+    </div>
+  </div>
+</footer>
+<a href="https://t.me/naijabonushunter" class="tg-float" target="_blank" rel="noopener" aria-label="Join our Telegram channel"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.9 4.6l-3.1 14.7c-.23 1.03-.85 1.28-1.72.8l-4.76-3.51-2.3 2.21c-.25.25-.47.47-.96.47l.34-4.86 8.85-8c.38-.34-.08-.53-.6-.19l-10.94 6.89-4.71-1.47c-1.02-.32-1.04-1.02.21-1.51l18.44-7.11c.85-.32 1.6.2 1.33 1.51z"/></svg><span class="tg-label">Únete a nuestro Telegram</span></a>
+</body>
+</html>
