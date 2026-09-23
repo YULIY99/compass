@@ -459,11 +459,14 @@ html[data-theme="dark"] .site-header { box-shadow: 0 2px 14px rgba(0, 0, 0, .25)
 .language-switch a { color: var(--muted); border: 1px solid var(--border); border-radius: 7px; padding: 5px 7px; font-size: .76rem; font-weight: 700; text-decoration: none; }
 .language-switch a[aria-current="page"] { color: var(--accent-strong); border-color: var(--accent); background: var(--accent-soft); }
 .language-switch a:hover { color: var(--accent-strong); border-color: var(--accent); }
-.theme-toggle { width: 42px; height: 42px; flex: 0 0 42px; display: grid; place-items: center; padding: 9px; cursor: pointer; border: 1px solid var(--border); border-radius: 11px; color: var(--accent-strong); background: var(--card-bg); }
-.theme-toggle:hover { border-color: var(--accent); transform: translateY(-2px); }
-.theme-toggle:active { transform: scale(.95); }
-.theme-toggle svg { grid-area: 1/1; width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-html[data-theme="light"] .theme-sun, html[data-theme="dark"] .theme-moon { display: none; }
+.theme-toggle { width: 60px; height: 32px; flex: 0 0 60px; position: relative; cursor: pointer; border: 1px solid var(--border); border-radius: 999px; background: var(--bg-alt); padding: 0; }
+.theme-toggle:hover { border-color: var(--accent); }
+.theme-toggle:active { transform: scale(.96); }
+.theme-toggle::after { content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); box-shadow: 0 1px 4px rgba(0,0,0,.28); transition: transform .25s ease; }
+html[data-theme="dark"] .theme-toggle::after { transform: translateX(30px); }
+.theme-toggle svg { position: absolute; top: 50%; width: 15px; height: 15px; transform: translateY(-50%); fill: none; stroke: var(--muted); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+.theme-toggle .theme-sun { left: 8px; }
+.theme-toggle .theme-moon { right: 8px; }
 
 h1 { font-size: clamp(1.85rem, 3vw, 2.65rem); letter-spacing: -.035em; }
 h2 { color: var(--text); letter-spacing: -.025em; }
@@ -534,7 +537,7 @@ html[data-theme] .trust-strip .updated { color: var(--muted); }
 main.has-article-toplist { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0 28px; max-width: 1240px; margin: 0 auto; padding: 0 20px 40px; }
 main.has-article-toplist > .hero { flex: 0 0 calc(100% + 40px); margin: 0 -20px 12px; }
 main.has-article-toplist > .container { flex: 1 1 0; min-width: 0; max-width: none; padding: 20px 0 0; }
-.article-toplist { position: sticky; top: 112px; flex: 0 0 274px; width: 274px; max-height: calc(100vh - 128px); align-self: flex-start; overflow-y: auto; margin: 24px 0 0; padding: 14px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); scrollbar-color: var(--border) transparent; }
+.article-toplist { position: sticky; top: 112px; flex: 0 0 274px; width: 274px; align-self: flex-start; margin: 24px 0 0; padding: 14px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); }
 .article-toplist h2 { font-size: 1rem; margin: 0 0 12px; }
 .article-toplist-list { display: grid; gap: 7px; }
 .article-toplist a { display: flex; align-items: center; gap: 8px; min-height: 46px; color: var(--text); background: var(--bg-alt); border: 1px solid var(--border); border-radius: 9px; padding: 7px; text-decoration: none; font-size: .78rem; line-height: 1.25; }
@@ -569,10 +572,10 @@ main .hero, main > .container, .home-sidebar, .article-toplist { animation: gent
 }
 @media (max-width: 900px) {
   .homepage-layout { flex-direction: column; }
-  html[data-theme] .home-sidebar { order: -1; position: static; width: 100%; flex: none; max-height: 420px; overflow-y: auto; }
+  html[data-theme] .home-sidebar { order: -1; position: static; width: 100%; flex: none; }
   main.has-article-toplist > .container { flex-basis: 100%; order: 2; }
   main.has-article-toplist > .hero { order: 0; }
-  .article-toplist { order: 1; position: static; flex-basis: 100%; width: 100%; max-height: 260px; }
+  .article-toplist { order: 1; position: static; flex-basis: 100%; width: 100%; }
 }
 @media (max-width: 640px) {
   .nav { flex-direction: row; align-items: center; min-height: 0; padding-block: 10px; gap: 6px 10px; }
