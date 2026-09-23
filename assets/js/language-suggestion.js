@@ -1,4 +1,34 @@
 (() => {
+  const root = document.documentElement;
+  const button = document.querySelector('.theme-toggle');
+  if (!button) return;
+
+  const systemDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : { matches: false };
+  let saved;
+  try { saved = localStorage.getItem('spinora-theme'); } catch (error) {}
+  root.dataset.theme = saved === 'light' || saved === 'dark'
+    ? saved : (systemDark.matches ? 'dark' : 'light');
+
+  const syncButton = () => {
+    button.setAttribute('aria-pressed', String(root.dataset.theme === 'dark'));
+  };
+  syncButton();
+
+  button.addEventListener('click', () => {
+    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('spinora-theme', root.dataset.theme); } catch (error) {}
+    syncButton();
+  });
+
+  systemDark.addEventListener?.('change', event => {
+    try { saved = localStorage.getItem('spinora-theme'); } catch (error) {}
+    if (saved === 'light' || saved === 'dark') return;
+    root.dataset.theme = event.matches ? 'dark' : 'light';
+    syncButton();
+  });
+})();
+
+(() => {
   const banner = document.getElementById('language-suggestion');
   if (!banner || sessionStorage.getItem('spinora-language-suggestion-dismissed')) return;
   const current = document.documentElement.lang.slice(0, 2).toLowerCase();
