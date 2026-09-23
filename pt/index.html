@@ -40,7 +40,7 @@
 /* --- Sidebar: Top Crypto clean brand cards (no promo creatives, uniform layout) --- */
 .sq-rank{display:flex;flex-direction:column;gap:16px;align-items:center;}
 .sq-card{
-  position:relative;display:block;width:100%;max-width:300px;aspect-ratio:1/1;
+  position:relative;display:flex;flex-direction:column;width:100%;max-width:300px;aspect-ratio:1/1;
   border-radius:14px;overflow:hidden;text-decoration:none;
   border:1px solid #2a3350;box-shadow:0 4px 18px rgba(0,0,0,.35);
 }
@@ -48,24 +48,29 @@
 
 .sq-card--cashy{background:radial-gradient(circle at 50% 38%,#123250 0%,#0c1f3a 45%,#081426 100%);}
 .sq-card--rollbit{background:radial-gradient(circle at 50% 38%,#221722 0%,#171219 45%,#0f0c12 100%);}
-.sq-card .sq-logo{position:absolute;inset:0 0 36% 0;display:flex;align-items:center;justify-content:center;padding:26px;}
-.sq-card .sq-logo img{width:100%;max-width:180px;max-height:64px;object-fit:contain;display:block;}
+/* --- Banner block: top ~58% of the card, full-bleed cover image --- */
+.sq-banner{position:relative;flex:0 0 58%;width:100%;overflow:hidden;background:rgba(0,0,0,.28);}
+.sq-banner img{width:100%;height:100%;object-fit:cover;display:block;}
+/* --- Logo mode: big centered logo on the brand gradient --- */
+.sq-banner--logo{display:flex;align-items:center;justify-content:center;padding:11%;}
+.sq-banner--logo img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;}
 .sq-wordmark{font-size:2.05rem;font-weight:900;letter-spacing:.13em;color:#fff;line-height:1;white-space:nowrap;}
 .sq-wordmark b{color:#ff8c1a;font-weight:900;}
 .sq-rank-badge{
-  position:absolute;top:10px;left:10px;z-index:2;min-width:28px;height:28px;padding:0 8px;
+  position:absolute;top:10px;left:10px;z-index:3;min-width:28px;height:28px;padding:0 8px;
   display:flex;align-items:center;justify-content:center;border-radius:8px;
   background:rgba(10,14,26,.78);border:1px solid var(--gold-light,#f7c948);
   color:var(--gold-light,#f7c948);font-weight:800;font-size:.8rem;
 }
 .sq-ad{
-  position:absolute;top:10px;right:10px;z-index:2;font-size:.6rem;font-weight:700;letter-spacing:.08em;
+  position:absolute;top:10px;right:10px;z-index:3;font-size:.6rem;font-weight:700;letter-spacing:.08em;
   color:#aeb6cf;background:rgba(10,14,26,.72);border:1px solid #2a3350;border-radius:6px;padding:3px 7px;
 }
+/* --- Bottom block: solid background (banner is now a separate block) --- */
 .sq-bar{
-  position:absolute;left:0;right:0;bottom:0;z-index:2;
-  padding:34px 14px 12px;
-  background:linear-gradient(180deg,rgba(8,11,22,0) 0%,rgba(8,11,22,.9) 48%,rgba(8,11,22,.97) 100%);
+  flex:1 1 auto;min-height:0;
+  padding:10px 14px 12px;
+  background:#0d1322;border-top:1px solid #232c47;
 }
 .sq-info strong{display:block;color:#fff;font-size:.95rem;font-weight:800;line-height:1.25;}
 .sq-info span{display:block;color:#c3c9de;font-size:.72rem;line-height:1.45;margin-top:3px;}
@@ -88,7 +93,7 @@
 .affiliate-note{font-size:0.85em;color:#666;margin:0 0 18px;}
 @media (max-width:900px){
   .homepage-layout{flex-direction:column;}
-  .home-sidebar{width:100%;flex:none;position:static;}
+  .home-sidebar{width:100%;flex:none;position:static;order:-1;}/* money block first on mobile */
 }
 </style>
 <script type="application/ld+json">{
@@ -158,12 +163,12 @@
   <div class="status-box">Se você se cadastrar pelos nossos links, podemos receber uma comissão sem custo extra para você. Apenas para maiores de 18 anos. Jogue com responsabilidade.</div>
 </div><aside class="home-sidebar"><h2>Cassinos em destaque</h2><div class="sq-rank">      <a class="sq-card sq-card--cloudbet" data-casino="cloudbet" href="/go/cloudbet/" rel="nofollow sponsored noopener">
         <span class="sq-rank-badge">#1</span><span class="sq-ad">Anúncio</span>
-        <span class="sq-logo"><img src="/assets/images/cloudbet-logo.svg" alt="Cloudbet" loading="lazy"></span>
+        <span class="sq-banner"><img src="/assets/images/banners/cloudbet-728x90.png" alt="Cloudbet" loading="lazy"></span>
         <span class="sq-bar"><span class="sq-info"><strong>Cloudbet</strong><span>Até $2.500 em dinheiro, sem rollover</span></span><span class="sq-cta">Conhecer o cassino →</span></span>
       </a>
       <a class="sq-card sq-card--rollbit" data-casino="rollbit" href="/go/rollbit/" rel="nofollow sponsored noopener">
         <span class="sq-rank-badge">#2</span><span class="sq-ad">Anúncio</span>
-        <span class="sq-logo"><img src="/assets/banners/rollbit-logo.png" alt="Rollbit" loading="lazy"></span>
+        <span class="sq-banner"><img src="/assets/images/banners/rollbit-1200x628.jpg" alt="Rollbit" loading="lazy"></span>
         <span class="sq-bar"><span class="sq-info"><strong>Rollbit</strong><span>Bônus de boas-vindas: confira a oferta atual no site do cassino</span></span><span class="sq-cta">Conhecer o cassino →</span></span>
       </a>
 </div></aside></div>
