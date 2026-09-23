@@ -343,6 +343,12 @@ footer {
   .nav { flex-direction: column; align-items: flex-start; }
   .rank-card { flex-direction: column; align-items: flex-start; }
   .hero h1 { font-size: 1.8rem; }
+  /* Mobile fix 23.09.2026: the sticky header (disclaimer banner + full nav +
+     language switcher) took up half the phone screen and hung over content
+     while scrolling. On mobile the header scrolls away like normal content.
+     The affiliate disclosure stays visible as a static block at the top -
+     it is NOT removed or hidden. */
+  .site-header { position: static; }
 }
 /* Brand logos / placeholders */
 .brand-logo { height: 46px; width: auto; display: block; margin: 2px 0 10px; }
