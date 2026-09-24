@@ -181,7 +181,10 @@ main { min-height: 60vh; padding-bottom: 40px; }
 
 /* CTA buttons */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
   background: linear-gradient(135deg, var(--gold-light), var(--gold));
   color: #1a1408 !important;
   font-weight: 700;
@@ -234,6 +237,8 @@ section {
 }
 
 /* Tables */
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 16px 0; }
+.table-wrap table { margin: 0; min-width: 560px; }
 table {
   width: 100%;
   border-collapse: collapse;
@@ -586,7 +591,7 @@ main .hero, main > .container, .home-sidebar, .article-toplist { animation: gent
   .hero { padding: 30px 0 28px; }
   .hero h1 { font-size: 1.85rem; }
   .hero .hero-sub { font-size: .95rem; }
-  .btn { padding: 10px 16px; font-size: .88rem; }
+  .btn { padding: 12px 20px; font-size: .92rem; min-height: 48px; }
   .sw-card { padding: 15px !important; }
   .sw-tag { white-space: normal !important; }
   .card, .rank-card { padding: 16px; }
@@ -739,9 +744,11 @@ main .hero, main > .container, .home-sidebar, .article-toplist { animation: gent
   display:none;background:none;border:1px solid var(--border,#2a3350);
   border-radius:8px;padding:8px 12px;cursor:pointer;
   font-size:1.2rem;color:var(--text,#fff);line-height:1;
+  min-width:48px;min-height:48px;
+  align-items:center;justify-content:center;
 }
 @media (max-width:640px){
-  .nav-toggle{display:block;order:3;margin-left:auto;}
+  .nav-toggle{display:flex;order:3;margin-left:auto;}
   .nav-links{
     display:none;order:4;flex:1 0 100%;
     flex-direction:column;align-items:stretch;
@@ -770,8 +777,9 @@ main .hero, main > .container, .home-sidebar, .article-toplist { animation: gent
 .slim-bar .slim-title{font-size:.8rem;color:var(--muted,#8b93ad);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .slim-bar .slim-cta{
   background:var(--cta-bg,#f7c948);color:#0d1322 !important;
-  font-weight:800;font-size:.78rem;padding:8px 16px;border-radius:8px;
-  text-decoration:none;white-space:nowrap;
+  font-weight:800;font-size:.78rem;padding:10px 18px;border-radius:8px;
+  text-decoration:none;white-space:nowrap;min-height:44px;
+  display:inline-flex;align-items:center;
 }
 @media (max-width:768px){
   .slim-bar.has-content{display:flex;}
