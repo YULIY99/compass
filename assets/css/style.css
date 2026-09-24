@@ -438,10 +438,10 @@ body, .site-header, .card, .rank-card, .sw-card, .home-sidebar, footer,
   transition: background-color .22s ease, border-color .22s ease, color .22s ease,
     box-shadow .22s ease;
 }
-/* Smooth theme cross-fade: applied briefly by JS while toggling data-theme. */
+/* Instant theme switch: disable transitions briefly while toggling data-theme.
+   Animating every element at once janks on content-heavy pages. */
 html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *::after {
-  transition: background-color .35s ease, color .35s ease, border-color .35s ease,
-    box-shadow .35s ease, fill .35s ease, stroke .35s ease !important;
+  transition: none !important;
 }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 
