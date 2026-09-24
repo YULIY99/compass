@@ -596,3 +596,141 @@ main .hero, main > .container, .home-sidebar, .article-toplist { animation: gent
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
 }
+
+/* --- Scout improvements 25.09.2026: mobile sticky CTA, card badges, bonus codes --- */
+
+/* Sticky bottom CTA bar on review pages (mobile) */
+.sticky-cta-bar{
+  display:none;position:fixed;left:0;right:0;bottom:0;z-index:1000;
+  background:var(--card-bg,#0d1322);border-top:1px solid var(--border,#2a3350);
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  box-shadow:0 -4px 24px rgba(0,0,0,.4);
+  align-items:center;gap:12px;
+}
+.sticky-cta-bar .sticky-info{flex:1;min-width:0;}
+.sticky-cta-bar .sticky-name{font-weight:800;font-size:.9rem;color:var(--text,#fff);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sticky-cta-bar .sticky-bonus{font-size:.75rem;color:var(--gold-light,#f7c948);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sticky-cta-bar .sticky-btn{
+  flex:0 0 auto;background:var(--cta-bg,#f7c948);color:#0d1322 !important;
+  font-weight:800;font-size:.9rem;padding:14px 24px;border-radius:10px;
+  text-decoration:none;white-space:nowrap;min-height:48px;
+  display:flex;align-items:center;justify-content:center;
+}
+@media (max-width:768px){
+  .sticky-cta-bar.show{display:flex;}
+  body.has-sticky-cta{padding-bottom:76px;}
+  /* Telegram float above sticky CTA */
+  body.has-sticky-cta .tg-float{bottom:84px;}
+}
+
+/* Card badges: New, Exclusive, Best for */
+.sq-badge{
+  position:absolute;top:10px;left:44px;z-index:3;
+  font-size:.65rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  padding:4px 10px;border-radius:6px;white-space:nowrap;
+}
+.sq-badge-new{background:#22c55e;color:#052e16;}
+.sq-badge-exclusive{background:#a855f7;color:#fff;}
+.sq-badge-best{background:var(--gold-light,#f7c948);color:#0d1322;}
+
+/* Bonus badge over card banner */
+.sq-bonus-badge{
+  position:absolute;bottom:10px;left:10px;z-index:3;
+  background:rgba(13,19,34,.92);border:1px solid var(--gold-light,#f7c948);
+  color:var(--gold-light,#f7c948);font-weight:800;font-size:.78rem;
+  padding:6px 12px;border-radius:8px;max-width:calc(100% - 20px);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
+/* Bonus code with tap-to-copy */
+.sq-bonus-code{
+  display:flex;align-items:center;gap:8px;margin-top:2px;
+  background:rgba(247,201,72,.08);border:1px dashed rgba(247,201,72,.4);
+  border-radius:8px;padding:6px 10px;cursor:pointer;
+  font-size:.78rem;color:#c3c9de;
+}
+.sq-bonus-code code{
+  font-family:ui-monospace,monospace;font-weight:800;letter-spacing:.08em;
+  color:var(--gold-light,#f7c948);font-size:.85rem;
+}
+.sq-bonus-code .copy-hint{margin-left:auto;font-size:.68rem;color:#8b93ad;}
+.sq-bonus-code:active{background:rgba(247,201,72,.15);}
+
+/* Crypto icons row on cards */
+.sq-crypto{display:flex;gap:6px;align-items:center;font-size:.72rem;color:#8b93ad;}
+.sq-crypto .coin{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:22px;height:22px;border-radius:50%;font-size:.6rem;font-weight:800;
+  background:#1a2340;border:1px solid #2a3350;color:#f7c948;
+}
+
+/* Card update date */
+.sq-updated{display:block;font-size:.68rem;color:#6b7390;margin-top:2px;}
+
+/* Spec row: wagering | min dep | payout | games */
+.sq-specs{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.72rem;color:#8b93ad;}
+.sq-specs span b{color:#c3c9de;font-weight:700;}
+
+/* Expert one-liner quote */
+.sq-expert{
+  font-size:.76rem;font-style:italic;color:#a8b0c8;line-height:1.4;
+  border-left:2px solid var(--gold-light,#f7c948);padding-left:8px;margin:2px 0;
+}
+
+/* Bigger touch targets on mobile */
+@media (max-width:768px){
+  html[data-theme] .sq-cta{min-height:48px;display:inline-flex;align-items:center;justify-content:center;padding:12px 24px;font-size:.85rem;}
+  .sq-cta-row .sq-cta{flex:1;}
+  .btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;}
+  .article-toplist a{min-height:52px;}
+  .nav-links a{min-height:44px;display:inline-flex;align-items:center;}
+}
+
+/* Review page: Best for / Not ideal for */
+.best-for-box{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;
+}
+.best-for-box>div{border-radius:10px;padding:12px 14px;font-size:.88rem;line-height:1.5;}
+.best-for-good{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.3);}
+.best-for-bad{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.25);}
+.best-for-box strong{display:block;margin-bottom:4px;font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;}
+.best-for-good strong{color:#22c55e;}
+.best-for-bad strong{color:#f87171;}
+@media (max-width:640px){.best-for-box{grid-template-columns:1fr;}}
+
+/* Review page: How to claim steps */
+.claim-steps{counter-reset:step;list-style:none;margin:12px 0;padding:0;display:flex;flex-direction:column;gap:10px;}
+.claim-steps li{
+  counter-increment:step;position:relative;padding:12px 14px 12px 52px;
+  background:var(--bg-alt,#101627);border:1px solid var(--border,#2a3350);
+  border-radius:10px;font-size:.9rem;line-height:1.5;
+}
+.claim-steps li::before{
+  content:counter(step);position:absolute;left:14px;top:12px;
+  width:26px;height:26px;border-radius:50%;background:var(--gold-light,#f7c948);
+  color:#0d1322;font-weight:800;font-size:.8rem;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* Review page: Key terms one-liner */
+.key-terms{
+  font-size:.78rem;color:#8b93ad;background:rgba(139,147,173,.08);
+  border-radius:8px;padding:8px 12px;margin:8px 0;line-height:1.5;
+}
+.key-terms strong{color:#c3c9de;}
+
+/* Review page: Quick facts visible date */
+.review-updated{font-size:.82rem;color:#8b93ad;margin:4px 0 12px;}
+.review-updated time{font-weight:700;color:#c3c9de;}
+
+/* Payment method icons near CTA */
+.pay-icons{display:flex;gap:8px;align-items:center;margin:8px 0;flex-wrap:wrap;}
+.pay-icons .pay{
+  font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:6px;
+  background:#1a2340;border:1px solid #2a3350;color:#f7c948;white-space:nowrap;
+}
+
+/* Performance: content-visibility for lower cards */
+@media (min-width:769px){
+  .sq-rank .sq-card:nth-child(n+4){content-visibility:auto;contain-intrinsic-size:300px 420px;}
+}
