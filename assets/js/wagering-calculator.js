@@ -2,7 +2,9 @@ function calcWagering(){
   const bonus = Math.max(0, parseFloat(document.getElementById('bonus-amount').value) || 0);
   const deposit = Math.max(0, parseFloat(document.getElementById('deposit-amount').value) || 0);
   const multiplier = Math.max(0, parseFloat(document.getElementById('multiplier').value) || 0);
-  const weighting = Math.min(Math.max(parseFloat(document.getElementById('weighting').value) || 100, 1), 100);
+  let weighting = parseFloat(document.getElementById('weighting').value);
+  if (isNaN(weighting)) weighting = 100;
+  weighting = Math.min(Math.max(weighting, 1), 100);
 
   const base = document.getElementById('basis').value === 'bonus' ? bonus : (bonus + deposit);
   const totalWagering = base * multiplier;
@@ -14,4 +16,10 @@ function calcWagering(){
 }
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('calc-btn').addEventListener('click', calcWagering);
+  // Enter key in any input triggers the calculation
+  document.querySelectorAll('.calc-form input, .calc-form select').forEach(el => {
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); calcWagering(); }
+    });
+  });
 });
