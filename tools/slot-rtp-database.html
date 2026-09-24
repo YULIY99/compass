@@ -18,7 +18,7 @@
 <link rel="alternate" hreflang="x-default" href="https://spinorawins.com/tools/slot-rtp-database.html">
 <link rel="alternate" hreflang="es" href="https://spinorawins.com/es/base-datos-rtp-tragamonedas.html">
 <link rel="alternate" hreflang="pt" href="https://spinorawins.com/pt/banco-de-dados-rtp-caca-niqueis.html">
-<link rel="stylesheet" href="../assets/css/style.css?v=20260924e">
+<link rel="stylesheet" href="../assets/css/style.css?v=20260925c&x=20260924e">
 <script defer src="../assets/js/rtp-database.js"></script>
 <script type="application/ld+json">
 {
@@ -92,10 +92,12 @@
     <input type="number" id="f-minrtp" placeholder="Min RTP %" step="0.1">
   </div>
 
-  <table>
+  <table class="rtp-table">
     <thead><tr><th>Slot</th><th>Provider</th><th>RTP</th><th>Volatility</th><th>Max Win</th></tr></thead>
     <tbody id="rtp-tbody"></tbody>
   </table>
+
+  <div id="rtp-cards" class="rtp-cards"></div>
 
   <div class="status-box">Data shown is a sample dataset for demonstration. Production version should pull from a maintained, audited RTP dataset with per-operator verification.</div>
 

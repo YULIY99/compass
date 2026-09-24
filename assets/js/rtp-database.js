@@ -15,6 +15,17 @@ function renderTable(data){
   tbody.innerHTML = data.map(s => `<tr>
     <td>${s.name}</td><td>${s.provider}</td><td>${s.rtp}%</td><td>${s.volatility}</td><td>${s.maxWin}</td>
   </tr>`).join('');
+  const cards = document.getElementById('rtp-cards');
+  if(cards){
+    cards.innerHTML = data.map(s => `<div class="rtp-card">
+      <div class="rtp-card-head"><strong>${s.name}</strong><span class="rtp-card-provider">${s.provider}</span></div>
+      <div class="rtp-card-grid">
+        <div><span>RTP</span><b>${s.rtp}%</b></div>
+        <div><span>Volatility</span><b>${s.volatility}</b></div>
+        <div><span>Max Win</span><b>${s.maxWin}</b></div>
+      </div>
+    </div>`).join('');
+  }
 }
 
 function applyFilters(){

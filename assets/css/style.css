@@ -777,3 +777,65 @@ main .hero, main > .container, .home-sidebar, .article-toplist { animation: gent
 @media (max-width:768px){
   .slim-bar.has-content{display:flex;}
 }
+
+/* --- Bonus comparator: cards on mobile (25.09.2026) --- */
+.bonus-cards{display:none;}
+.bonus-card{
+  background:var(--card-bg,#0d1322);border:1px solid var(--border,#2a3350);
+  border-radius:12px;padding:14px 16px;margin-bottom:12px;
+}
+.bonus-card-head{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:6px;
+}
+.bonus-card-head strong{font-size:1.05rem;color:#fff;}
+.bonus-card-geo{
+  font-size:.75rem;color:var(--muted,#8b93ad);
+  background:rgba(255,255,255,.06);padding:4px 10px;border-radius:20px;
+}
+.bonus-card-type{color:var(--gold-light,#f7c948);font-weight:700;margin-bottom:10px;}
+.bonus-card-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;
+}
+.bonus-card-grid div{
+  background:rgba(255,255,255,.03);border-radius:8px;padding:8px 10px;
+}
+.bonus-card-grid span{
+  display:block;font-size:.7rem;color:var(--muted,#8b93ad);margin-bottom:2px;
+}
+.bonus-card-grid b{font-size:.9rem;color:#fff;font-weight:700;}
+@media (max-width:768px){
+  /* Hide wide table on mobile, show cards instead */
+  .bonus-table{display:none;}
+  .bonus-cards{display:block;}
+}
+
+/* --- RTP database: cards on mobile (25.09.2026) --- */
+.rtp-cards{display:none;}
+.rtp-card{
+  background:var(--card-bg,#0d1322);border:1px solid var(--border,#2a3350);
+  border-radius:12px;padding:14px 16px;margin-bottom:12px;
+}
+.rtp-card-head{
+  display:flex;justify-content:space-between;align-items:center;gap:8px;
+  margin-bottom:10px;
+}
+.rtp-card-head strong{font-size:1.05rem;color:#fff;}
+.rtp-card-provider{
+  font-size:.75rem;color:var(--muted,#8b93ad);white-space:nowrap;
+  background:rgba(255,255,255,.06);padding:4px 10px;border-radius:20px;
+}
+.rtp-card-grid{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;
+}
+.rtp-card-grid div{
+  background:rgba(255,255,255,.03);border-radius:8px;padding:8px 10px;
+}
+.rtp-card-grid span{
+  display:block;font-size:.7rem;color:var(--muted,#8b93ad);margin-bottom:2px;
+}
+.rtp-card-grid b{font-size:.9rem;color:var(--gold-light,#f7c948);font-weight:700;}
+@media (max-width:768px){
+  .rtp-table{display:none;}
+  .rtp-cards{display:block;}
+}

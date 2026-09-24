@@ -18,6 +18,19 @@ function renderBonusTable(geo){
   tbody.innerHTML = filtered.map(b => `<tr>
     <td>${b.casino}</td><td>${b.geo}</td><td>${b.type}</td><td>${b.pct}</td><td>${b.max}</td><td>${b.wagering}</td><td>${b.minDep}</td>
   </tr>`).join('');
+  const cards = document.getElementById('bonus-cards');
+  if(cards){
+    cards.innerHTML = filtered.map(b => `<div class="bonus-card">
+      <div class="bonus-card-head"><strong>${b.casino}</strong><span class="bonus-card-geo">${b.geo}</span></div>
+      <div class="bonus-card-type">${b.type}</div>
+      <div class="bonus-card-grid">
+        <div><span>Match</span><b>${b.pct}</b></div>
+        <div><span>Max bonus</span><b>${b.max}</b></div>
+        <div><span>Wagering</span><b>${b.wagering}</b></div>
+        <div><span>Min deposit</span><b>${b.minDep}</b></div>
+      </div>
+    </div>`).join('');
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
