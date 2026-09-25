@@ -37,8 +37,8 @@
 .home-intro p{font-size:1.02rem;margin:0 0 10px;}
 .home-sidebar{
   width:320px;flex:0 0 320px;position:sticky;top:20px;z-index:10;
-  background:#151b2e;border:1px solid #2a3350;border-radius:16px;padding:20px;
-  box-shadow:0 4px 24px rgba(0,0,0,.35);
+  background:var(--card-bg);border:1px solid var(--border);border-radius:16px;padding:20px;
+  box-shadow:var(--shadow);
 }
 .home-sidebar h2{margin:0 0 14px;font-size:1.15rem;color:var(--gold-light,#f7c948);}
 /* --- Expanded casino cards v2 (25.09.2026): serious cards with verified bonus facts --- */
@@ -72,14 +72,14 @@
   .sq-rank{align-items:center;}
 }
 .trust-strip{
-  margin:0 0 18px;padding:20px 24px;border:1px solid #2a3350;border-radius:14px;background:#101627;
+  margin:0 0 18px;padding:20px 24px;border:1px solid var(--border);border-radius:14px;background:var(--card-bg);
 }
 .trust-strip h3{margin:0 0 12px;font-size:1.05rem;color:var(--gold-light,#f7c948);}
 .trust-strip ul{list-style:none;margin:0 0 10px;padding:0;display:flex;flex-wrap:wrap;gap:10px 24px;}
 .trust-strip ul li{font-size:.92rem;padding-left:22px;position:relative;}
 .trust-strip ul li::before{content:"✓";position:absolute;left:0;color:var(--gold-light,#f7c948);font-weight:800;}
 .trust-strip .updated{font-size:.82rem;color:#8b93ad;margin:0;}
-.affiliate-note{font-size:0.85em;color:#666;margin:0 0 18px;}
+.affiliate-note{font-size:0.85em;color:var(--muted);margin:0 0 18px;}
 @media (max-width:900px){
   .homepage-layout{flex-direction:column;}
   .home-sidebar{width:100%;flex:none;position:static;order:-1;}/* money block first on mobile */
