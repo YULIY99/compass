@@ -57,22 +57,26 @@
   function initNav(){
     var nav = document.querySelector('.site-header .nav');
     var links = document.querySelector('.nav-links');
-    if(!nav || !links || document.querySelector('.nav-toggle')) return;
-    var btn = document.createElement('button');
-    btn.className = 'nav-toggle';
-    btn.type = 'button';
-    btn.setAttribute('aria-label', 'Menu');
-    btn.setAttribute('aria-expanded', 'false');
-    btn.innerHTML = '☰';
+    if(!nav || !links) return;
+    var btn = document.querySelector('.nav-toggle');
+    if(!btn){
+      btn = document.createElement('button');
+      btn.className = 'nav-toggle';
+      btn.type = 'button';
+      btn.setAttribute('aria-label', 'Menu');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.innerHTML = '☰';
+      // Insert before language-switch or at end of nav
+      var langSwitch = nav.querySelector('.language-switch');
+      if(langSwitch) nav.insertBefore(btn, langSwitch);
+      else nav.appendChild(btn);
+    }
+    // Always attach the toggle handler to the button (existing or new)
     btn.addEventListener('click', function(){
       var open = links.classList.toggle('open');
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       btn.innerHTML = open ? '✕' : '☰';
     });
-    // Insert before language-switch or at end of nav
-    var langSwitch = nav.querySelector('.language-switch');
-    if(langSwitch) nav.insertBefore(btn, langSwitch);
-    else nav.appendChild(btn);
   }
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initNav);
   else initNav();
