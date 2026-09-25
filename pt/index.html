@@ -18,7 +18,7 @@
 <link rel="alternate" hreflang="x-default" href="https://spinorawins.com/">
 <link rel="alternate" hreflang="es" href="https://spinorawins.com/es/">
 <link rel="alternate" hreflang="pt" href="https://spinorawins.com/pt/">
-<link rel="stylesheet" href="/assets/css/style.css?v=20260924e">
+<link rel="stylesheet" href="/assets/css/style.css?v=20260925c">
 <link rel="stylesheet" href="/assets/css/banner-slots.css">
 <link rel="stylesheet" href="/assets/css/language.css">
 <style>
@@ -38,7 +38,7 @@
   box-shadow:var(--shadow);
 }
 .home-sidebar h2{margin:0 0 14px;font-size:1.15rem;color:var(--gold-light,#f7c948);}
-/* --- Expanded casino cards v2 (25.09.2026): serious cards with verified bonus facts --- */
+/* --- Casino cards v3 (25.09.2026): clean hierarchy, one full-width CTA --- */
 .sq-card{
   position:relative;display:flex;flex-direction:column;width:100%;max-width:300px;
   border-radius:14px;overflow:hidden;
@@ -47,24 +47,23 @@
 }
 .sq-banner{position:relative;display:block;width:100%;aspect-ratio:1200/696;overflow:hidden;}
 .sq-banner img{width:100%;height:100%;object-fit:cover;display:block;}
-.sq-body{display:flex;flex-direction:column;gap:8px;padding:14px 16px 16px;background:#0d1322;border-top:1px solid #232c47;}
+.sq-body{display:flex;flex-direction:column;gap:9px;padding:16px;background:#0d1322;border-top:1px solid #232c47;}
 .sq-head{display:flex;align-items:center;justify-content:space-between;gap:8px;}
-.sq-head strong{color:#fff;font-size:1.02rem;font-weight:800;line-height:1.2;}
-.sq-stars{color:var(--gold-light,#f7c948);font-size:.82rem;font-weight:700;white-space:nowrap;}
-.sq-bonus{display:block;color:var(--gold-light,#f7c948);font-size:.95rem;font-weight:800;line-height:1.3;}
-.sq-sub{display:block;color:#8b93ad;font-size:.74rem;line-height:1.4;}
-.sq-facts{display:flex;flex-wrap:wrap;gap:6px 14px;}
-.sq-facts>span{font-size:.74rem;color:#c3c9de;}
-.sq-facts b{color:#8b93ad;font-weight:600;margin-right:5px;}
-.sq-pros{display:flex;flex-direction:column;gap:3px;margin:0;padding:0;list-style:none;}
-.sq-pros li{font-size:.76rem;color:#c3c9de;padding-left:18px;position:relative;line-height:1.4;}
-.sq-pros li::before{content:"\2713";position:absolute;left:0;color:#33c16c;font-weight:800;}
-.sq-warn{display:block;font-size:.72rem;color:#fbbf24;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.32);border-radius:8px;padding:6px 10px;line-height:1.4;}
-.sq-cta-row{display:flex;align-items:center;gap:14px;margin-top:4px;}
-.sq-cta{display:inline-block;font-size:.8rem;font-weight:800;color:#0d1322 !important;text-decoration:none;background:var(--gold-light,#f7c948);border-radius:8px;padding:9px 22px;white-space:nowrap;}
+.sq-head strong{color:#fff;font-size:1.05rem;font-weight:800;line-height:1.2;}
+.sq-stars{color:var(--gold-light,#f7c948);font-size:.85rem;font-weight:700;white-space:nowrap;}
+.sq-bonus{display:block;color:var(--gold-light,#f7c948);font-size:1rem;font-weight:800;line-height:1.3;}
+.sq-sub{display:block;color:#8b93ad;font-size:.78rem;line-height:1.4;}
+.sq-facts{display:block;font-size:.74rem;color:#8b93ad;}
+.sq-facts b{color:#c3c9de;font-weight:600;margin-right:4px;}
+.sq-warn{display:block;font-size:.72rem;color:#fbbf24;line-height:1.4;}
+.sq-bonus-code{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#c3c9de;background:#151b2e;border:1px dashed #2a3350;border-radius:8px;padding:8px 12px;cursor:pointer;}
+.sq-bonus-code code{color:var(--gold-light,#f7c948);font-weight:800;letter-spacing:.06em;}
+.sq-bonus-code .copy-hint{margin-left:auto;font-size:.68rem;color:#8b93ad;}
+.sq-cta{display:block;text-align:center;font-size:.92rem;font-weight:800;color:#0d1322 !important;text-decoration:none;background:var(--gold-light,#f7c948);border-radius:10px;padding:12px;margin-top:2px;}
 .sq-cta:hover{filter:brightness(1.08);}
-.sq-review{font-size:.78rem;color:#8b93ad;text-decoration:underline;text-underline-offset:3px;}
-.sq-review:hover{color:#c3c9de;}
+.sq-review{display:block;text-align:center;font-size:.78rem;color:#8b93ad;text-decoration:none;}
+.sq-review:hover{color:#c3c9de;text-decoration:underline;}
+html[data-theme] .sq-card{aspect-ratio:auto;}
 @media (max-width:900px){
   .sq-rank{align-items:center;}
 }
@@ -208,10 +207,10 @@
           <span class="sq-head"><strong>Duelbits</strong><span class="sq-stars">★ 4.5</span></span>
           <span class="sq-bonus">Até 500 giros grátis</span>
           <span class="sq-sub">Recompensas Rookie Rush</span>
-          <span class="sq-facts"><span><b>Wagering</b>Sem wagering nos ganhos</span></span>
-          <ul class="sq-pros"><li>Ganhos em dinheiro</li><li>Cassino nativo cripto</li></ul>
-          
-          <span class="sq-cta-row"><a class="sq-cta" href="/go/duelbits/" rel="nofollow sponsored noopener">Visitar →</a><a class="sq-review" href="../duelbits-review.html">Análise</a></span>
+          <span class="sq-facts"><b>Wagering</b> Sem wagering nos ganhos</span>
+
+          <a class="sq-cta" href="/go/duelbits/" rel="nofollow sponsored noopener">Visitar →</a>
+          <a class="sq-review" href="../duelbits-review.html">Análise →</a>
         </span>
       </div>
       <div class="sq-card" data-casino="cloudbet">
@@ -221,10 +220,10 @@
           <span class="sq-head"><strong>Cloudbet</strong><span class="sq-stars">★ 4.4</span></span>
           <span class="sq-bonus">Até $2,500 em recompensas</span>
           <span class="sq-sub">Pacote de 30 dias · sem wagering</span>
-          <span class="sq-facts"><span><b>Wagering</b>Nenhum</span></span>
-          <ul class="sq-pros"><li>Sem wagering</li><li>Até 200 giros grátis</li></ul>
-          
-          <span class="sq-cta-row"><a class="sq-cta" href="/go/cloudbet/" rel="nofollow sponsored noopener">Visitar →</a><a class="sq-review" href="../cloudbet-review.html">Análise</a></span>
+          <span class="sq-facts"><b>Wagering</b> Nenhum</span>
+
+          <a class="sq-cta" href="/go/cloudbet/" rel="nofollow sponsored noopener">Visitar →</a>
+          <a class="sq-review" href="../cloudbet-review.html">Análise →</a>
         </span>
       </div>
       <div class="sq-card" data-casino="bitstarz">
@@ -234,10 +233,10 @@
           <span class="sq-head"><strong>Bitstarz</strong><span class="sq-stars">★ 4.6</span></span>
           <span class="sq-bonus">100% até 1 BTC</span>
           <span class="sq-sub">Primeiro depósito · 5 BTC + 180 giros pacote total</span>
-          <span class="sq-facts"><span><b>Wagering</b>40x</span></span>
-          <ul class="sq-pros"><li>Desde 2014</li><li>Bônus em 4 etapas</li></ul>
-          
-          <span class="sq-cta-row"><a class="sq-cta" href="/go/bitstarz/" rel="nofollow sponsored noopener">Visitar →</a><a class="sq-review" href="../bitstarz-review.html">Análise</a></span>
+          <span class="sq-facts"><b>Wagering</b> 40x</span>
+
+          <a class="sq-cta" href="/go/bitstarz/" rel="nofollow sponsored noopener">Visitar →</a>
+          <a class="sq-review" href="../bitstarz-review.html">Análise →</a>
         </span>
       </div>
       <div class="sq-card" data-casino="cashy">
@@ -247,10 +246,9 @@
           <span class="sq-head"><strong>Cashy</strong><span class="sq-stars">★ 4.0</span></span>
           <span class="sq-bonus">Bônus de boas-vindas</span>
           <span class="sq-sub">Confira a oferta atual no site do cassino</span>
-          
-          
-          
-          <span class="sq-cta-row"><a class="sq-cta" href="/go/cashy/" rel="nofollow sponsored noopener">Visitar →</a><a class="sq-review" href="../cashy-review.html">Análise</a></span>
+
+          <a class="sq-cta" href="/go/cashy/" rel="nofollow sponsored noopener">Visitar →</a>
+          <a class="sq-review" href="../cashy-review.html">Análise →</a>
         </span>
       </div>
       <div class="sq-card" data-casino="rollbit">
@@ -260,10 +258,10 @@
           <span class="sq-head"><strong>Rollbit</strong><span class="sq-stars">★ 4.3</span></span>
           <span class="sq-bonus">15% de rakeback extra</span>
           <span class="sq-sub">Primeiras 24 horas, depois 5% base</span>
-          <span class="sq-facts"><span><b>Wagering</b>Nenhum</span></span>
-          <ul class="sq-pros"><li>Sem wagering nunca</li><li>Sem depósito necessário</li></ul>
-          
-          <span class="sq-cta-row"><a class="sq-cta" href="/go/rollbit/" rel="nofollow sponsored noopener">Visitar →</a><a class="sq-review" href="../rollbit-review.html">Análise</a></span>
+          <span class="sq-facts"><b>Wagering</b> Nenhum</span>
+
+          <a class="sq-cta" href="/go/rollbit/" rel="nofollow sponsored noopener">Visitar →</a>
+          <a class="sq-review" href="../rollbit-review.html">Análise →</a>
         </span>
       </div>
       <div class="sq-card" data-casino="n1-casino">
@@ -273,10 +271,10 @@
           <span class="sq-head"><strong>N1 Casino</strong><span class="sq-stars">★ 4.2</span></span>
           <span class="sq-bonus">Até €400 + 200 giros grátis</span>
           <span class="sq-sub">A oferta varia por região</span>
-          <span class="sq-facts"><span><b>Wagering</b>50x</span></span>
-          <ul class="sq-pros"><li>200 giros grátis</li><li>Grande catálogo de jogos</li></ul>
-          
-          <span class="sq-cta-row"><a class="sq-cta" href="/go/n1-casino/" rel="nofollow sponsored noopener">Visitar →</a><a class="sq-review" href="../n1-casino-review.html">Análise</a></span>
+          <span class="sq-facts"><b>Wagering</b> 50x</span>
+
+          <a class="sq-cta" href="/go/n1-casino/" rel="nofollow sponsored noopener">Visitar →</a>
+          <a class="sq-review" href="../n1-casino-review.html">Análise →</a>
         </span>
       </div>
       <div class="sq-card" data-casino="vave">
@@ -286,10 +284,10 @@
           <span class="sq-head"><strong>Vave</strong><span class="sq-stars">★ 4.2</span></span>
           <span class="sq-bonus">150% até 1.5 BTC + 100 giros</span>
           <span class="sq-sub">Oferta padrão de boas-vindas</span>
-          <span class="sq-facts"><span><b>Wagering</b>40x</span></span>
-          <ul class="sq-pros"><li>100 giros grátis</li><li>Amigável com cripto</li></ul>
-          
-          <span class="sq-cta-row"><a class="sq-cta" href="/go/vave/" rel="nofollow sponsored noopener">Visitar →</a><a class="sq-review" href="../vave-review.html">Análise</a></span>
+          <span class="sq-facts"><b>Wagering</b> 40x</span>
+
+          <a class="sq-cta" href="/go/vave/" rel="nofollow sponsored noopener">Visitar →</a>
+          <a class="sq-review" href="../vave-review.html">Análise →</a>
         </span>
       </div>
       <div class="sq-card" data-casino="cooked">
@@ -299,10 +297,10 @@
           <span class="sq-head"><strong>Cooked</strong><span class="sq-stars">★ 4.1</span></span>
           <span class="sq-bonus">100% até $1,000</span>
           <span class="sq-sub">Depósito mínimo $20</span>
-          <span class="sq-facts"><span><b>Wagering</b>30x (depósito+bônus)</span></span>
-          <ul class="sq-pros"><li>Aposta máx $10</li><li>Bônus simples de uma etapa</li></ul>
-          
-          <span class="sq-cta-row"><a class="sq-cta" href="/go/cooked/" rel="nofollow sponsored noopener">Visitar →</a><a class="sq-review" href="../cooked-review.html">Análise</a></span>
+          <span class="sq-facts"><b>Wagering</b> 30x (depósito+bônus)</span>
+
+          <a class="sq-cta" href="/go/cooked/" rel="nofollow sponsored noopener">Visitar →</a>
+          <a class="sq-review" href="../cooked-review.html">Análise →</a>
         </span>
       </div>
       <div class="sq-card" data-casino="planbet">
@@ -312,10 +310,10 @@
           <span class="sq-head"><strong>Planbet</strong><span class="sq-stars">★ 4.0</span></span>
           <span class="sq-bonus">100% até €300 + 30 giros</span>
           <span class="sq-sub">Primeiro depósito · €1,500 + 150 giros total</span>
-          <span class="sq-facts"><span><b>Wagering</b>35x</span></span>
-          <ul class="sq-pros"><li>150 giros grátis</li></ul>
+          <span class="sq-facts"><b>Wagering</b> 35x</span>
           <span class="sq-warn">⚠ Depósitos cripto não qualificam para o bônus</span>
-          <span class="sq-cta-row"><a class="sq-cta" href="/go/planbet/" rel="nofollow sponsored noopener">Visitar →</a><a class="sq-review" href="../planbet-review.html">Análise</a></span>
+          <a class="sq-cta" href="/go/planbet/" rel="nofollow sponsored noopener">Visitar →</a>
+          <a class="sq-review" href="../planbet-review.html">Análise →</a>
         </span>
       </div>
       <div class="sq-card" data-casino="22bet">
@@ -325,10 +323,10 @@
           <span class="sq-head"><strong>22Bet</strong></span>
           <span class="sq-bonus">Até €1,500 + 150 giros grátis</span>
           <span class="sq-sub">Pacote em 4 depósitos</span>
-          <span class="sq-facts"><span><b>Wagering</b>35x</span></span>
-          <ul class="sq-pros"><li>150 giros grátis</li></ul>
+          <span class="sq-facts"><b>Wagering</b> 35x</span>
           <span class="sq-warn">⚠ Depósitos cripto não qualificam para o bônus</span>
-          <span class="sq-cta-row"><a class="sq-cta" href="/go/22bet/" rel="nofollow sponsored noopener">Visitar →</a><a class="sq-review" href="../22bet-review.html">Análise</a></span>
+          <a class="sq-cta" href="/go/22bet/" rel="nofollow sponsored noopener">Visitar →</a>
+          <a class="sq-review" href="../22bet-review.html">Análise →</a>
         </span>
       </div>
     </div>
